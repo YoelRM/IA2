@@ -1,0 +1,1349 @@
+Delivered-To: munozjavier541@gmail.com
+Received: by 2002:a05:7208:831c:b0:91:cf59:755a with SMTP id cj28csp312622rbb;
+        Sat, 5 Oct 2024 11:01:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF9MiVJn8TDVW3dk94U3T8UysRMYBBpHxkaBq+/5NYLJGHfuCvj7r1tUISdcArMMezzy5Xm
+X-Received: by 2002:a05:6402:268a:b0:5c8:839c:8145 with SMTP id 4fb4d7f45d1cf-5c8d2e11bc5mr5351139a12.7.1728151278209;
+        Sat, 05 Oct 2024 11:01:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1728151278; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jYK0TUjKqTGyBxnOETN2lT6uS37k6ivRUWY+s8bh2f9qpIIQ8SsqQEReU+mSjZYL3i
+         JiM+bPQrRCRW3OXWZksT7Erf3na0/jogxS8Gi59T3MwqJFnxg6YDgQW3lrp/FOk0o/H7
+         bM91EU9jwyGmJ6JwgXB4vnqVhqQ3WeVspX79F3pKydhD3IQWJHFpPzVdfoJUNUuWjbqy
+         V36+WFU6qBLNQ5Gp4u0LxxjEGqKGc8qrwcKCsa0Dk3jqHaE7dmBDCanZZAR0yDg0F6yP
+         kzF8w1BTuBjcxHFbSI0p795tJN1CA14dVV7ITyhY4c4+wC5e7gN/GqH+tu35HGAGT2th
+         wgTA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:message-id:list-id:mime-version:from:subject:to:dkim-signature
+         :dkim-signature;
+        bh=Z22h+CeEutJH/do7kyMjye//SgJ8xdDQwuc9Sm4YLAc=;
+        fh=yeY+2WUtIQ1rN27F9MgGMWPQRdbs9VfYgJw2gJkKt3M=;
+        b=CtTnAMhUCHni6PX1yb3neYldwR1P8MDPCogp10rFuejLlLWSvWeQTZb4GIhVyEaQ2R
+         bl05Ne60aQIiGzpwr4/p9dIt8BwMzwKOJAmimbInCzMQTDEp6dxlR4cOVLJeHxe+j6JU
+         KpZnS+vRzEWZzbdha7IF2EcxW2VJECxLMpwiwOhT4v0rojqTF0KO2vLO1cu8tRCIriJr
+         Q1v7VNRpSaJpxWAZS+orH3fI4XugqsteRMOJOEPyKBnZLYTY3qyrtqSkaSoZLyNPoWZ6
+         qpSJzax0OupzSw7iKrwOnyW0ev4LDr94WZHxgo4XB4EYpt3g/MGhAUcgqtSuj3ENgayH
+         hTRw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mailer.coppel.com header.s=key4 header.b=b3vdFjmD;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=dj9QcTlU;
+       spf=pass (google.com: domain of suite16@mailer.coppel.com designates 45.86.118.186 as permitted sender) smtp.mailfrom=suite16@mailer.coppel.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=coppel.com
+Return-Path: <suite16@mailer.coppel.com>
+Received: from mta-2d5676ba.ip4.emarsys.us (mta-2d5676ba.ip4.emarsys.us. [45.86.118.186])
+        by mx.google.com with ESMTPS id 4fb4d7f45d1cf-5c8e05f0b96si1655452a12.439.2024.10.05.11.01.17
+        for <MUNOZJAVIER541@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 05 Oct 2024 11:01:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of suite16@mailer.coppel.com designates 45.86.118.186 as permitted sender) client-ip=45.86.118.186;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mailer.coppel.com header.s=key4 header.b=b3vdFjmD;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=dj9QcTlU;
+       spf=pass (google.com: domain of suite16@mailer.coppel.com designates 45.86.118.186 as permitted sender) smtp.mailfrom=suite16@mailer.coppel.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=coppel.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key4; d=mailer.coppel.com;
+ h=To:Subject:From:MIME-Version:List-Id:Content-Type:Message-ID:Date;
+ i=micompra@mailer.coppel.com;
+ bh=Z22h+CeEutJH/do7kyMjye//SgJ8xdDQwuc9Sm4YLAc=;
+ b=b3vdFjmDYZ7tCiz9L3VCUeOBZGzX9GAyr1xd+nYgIcHwfQ6ExVm2PgSz6fIGq1J9iOvqQlr9XkH3
+   gckrLSyf/GbDhH+4/5Km/NZnPCTjrcIYkq004WbcpLDXwTJToGmf7t0l2FtdURAsWiUu/ROrdCFc
+   Ks1CqABtgsnAF+aTbpY=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=emarsys.net;
+ h=To:Subject:From:MIME-Version:List-Id:Content-Type:Message-ID:Date;
+ bh=Z22h+CeEutJH/do7kyMjye//SgJ8xdDQwuc9Sm4YLAc=;
+ b=dj9QcTlUHS2ircTshWkrKWNNiy8nzroezH7MAaknhPRpOe3hAHE/otcEEJhQu2YPSrduHupnfZWb
+   VxACQZA1VXPwAtLe7yM5JVLCVQEdQ7LHkUOvCZ/46A7AtVwZfiqN+EGgVHgtYR73M/lYeQ8/U2+y
+   2+psNA1RYXXFKzeCpQ0=
+To: MUNOZJAVIER541@GMAIL.COM
+Subject: =?UTF-8?Q?=C2=BFY=20si=20los=20agregas=20al=20carrito=3F?=
+X-Mailer: class SMTPMail
+From: "Tiendas Coppel" <micompra@mailer.coppel.com>
+MIME-Version: 1.0
+List-Id: 766895328 <Tiendas Coppel>
+X-EMarSys-Identify: 766895328_8818643_62019613_TRANSACTIONAL
+X-EMarSys-Environment: suite16
+X-Report-Abuse: Please report abuse here: abuse-report@emarsys.com
+Content-Type: multipart/alternative;
+ boundary="--=_---NextPart--=_-ESMayyRFMa"
+Message-ID: <0.0.4.158.1DB17509388D54C.0@mta-2d5676ba.ip4.emarsys.us>
+Date: Sat, 5 Oct 2024 20:01:17 +0200
+
+
+----=_---NextPart--=_-ESMayyRFMa
+Content-Type: text/plain; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+An=C3=ADmate a estrenar con esta selecci=C3=B3n de productos.
+
+Haz clic para visitar Coppel.com
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_2&ems_=
+l=3D11128250&i=3D1&d=3DNjY4NDQ2NjY5%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw=
+%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb2=
+5lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7C=
+MjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTI1NzI3OC5wbmc%3D%7CT=
+G9nbytDb3BwZWwuY29t%7CNzI4NDMwOTA3%7C&_esuh=3D_11_5f87d605ab40d8fcceadbcc8a=
+da1b526f3e56cf2aa3385e839fefd7aeedecf31
+
+
+Electr=C3=B3nica
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_4&ems_=
+l=3D11128250&i=3D1&d=3DNjY4NDQ2Njcx%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw=
+%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb2=
+5lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7C=
+MjI%3D%7CMDE%3D%7CRWxlY3Ryb25pY2E%3D%7CRWxlY3RyJUMzJUIzbmljYQ%3D%3D%7CRWxlY=
+3RyJUMzJUIzbmljYQ%3D%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_a00a9c9ad689f3f401519=
+43d2087a1adfa8fa911d1c242dad3b42e5793dc4e4f
+
+|
+
+Celulares
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_6&ems_=
+l=3D11128250&i=3D1&d=3DNjY4NDQ2Njcz%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw=
+%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb2=
+5lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7C=
+MjI%3D%7CMDE%3D%7CQ2VsdWxhcmVz%7CQ2VsdWxhcmVz%7CQ2VsdWxhcmVz%7CNzI4NDMwOTA3=
+%7C&_esuh=3D_11_351cf4f153d2bf520c4017d87c926a6e693d0ba20d350d1f92da1488a1c=
+6dd02
+
+|
+
+Hogar
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_8&ems_=
+l=3D11128250&i=3D1&d=3DNjY4NDQ2Njc1%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw=
+%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb2=
+5lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7C=
+MjI%3D%7CMDE%3D%7CSG9nYXI%3D%7CSG9nYXI%3D%7CSG9nYXI%3D%7CNzI4NDMwOTA3%7C&_e=
+suh=3D_11_5371ad38f80223708e9fc26c23c09d933b84692331aa2f4dfacc5eb5f4c24f0d
+
+|
+
+OFERTAS
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_10&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njc3%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CT2ZlcnRhcw%3D%3D%7CT0ZFUlRBUw%3D%3D%7CT3V0bGV0%7CNzI4NDM=
+wOTA3%7C&_esuh=3D_11_022fa69cd7b9160dd69f4690ca483ebcd5133f0182d7a1c0ce85d5=
+6aaf8360f4
+
+
+Estos productos podr=C3=ADan interesarte:
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_12&ems=
+_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njc5%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQn=
+Jvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7C=
+MjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMS5qcG=
+clM0ZjaSUzRCUyNHBlcnNfNTE2NjklMjQ%3D%7CUHJlZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4N=
+DMwOTA3%7C&_esuh=3D_11_a1e2bbd258cf61860ce25a5b00f5e6f14bc73a5c41a0ce8f586d=
+cfc0a8666606
+
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_14&ems=
+_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njgx%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQn=
+Jvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7C=
+MjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMS5qcG=
+clM0ZjaSUzRCU3QiU3QmNvbnRhY3QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNv=
+bmFs%7CNzI4NDMwOTA3%7C&_esuh=3D_11_64371ba2c90720ad316efaeb97f455dd51747693=
+2d92668f115e1f8cb150a89e
+
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_16&ems=
+_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njgz%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQn=
+Jvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7C=
+MjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMi5qcG=
+clM0ZjaSUzRCU3QiU3QmNvbnRhY3QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNv=
+bmFs%7CNzI4NDMwOTA3%7C&_esuh=3D_11_2222e70428afc5689ac0e981be14a7e75ba6d3e9=
+fed4cb5f1a5e69adfd67ab76
+
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_18&ems=
+_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njg1%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQn=
+Jvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7C=
+MjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMy5qcG=
+clM0ZjaSUzRCU3QiU3QmNvbnRhY3QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNv=
+bmFs%7CNzI4NDMwOTA3%7C&_esuh=3D_11_9a672c92343d348b52f4275765a1d100546fd3f1=
+1b0d4b7d160d22afc4b5c159
+
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_20&ems=
+_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njg3%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQn=
+Jvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7C=
+MjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrNC5qcG=
+clM0ZjaSUzRCU3QiU3QmNvbnRhY3QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNv=
+bmFs%7CNzI4NDMwOTA3%7C&_esuh=3D_11_99dc4fe584618fbb69083f5a1c663febbcf50d06=
+9abd863ebdf5a4177622cb81
+
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_22&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njg5%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTM3NjYxMy5qcGc%3D%7C=
+RXhjbHVzaXZvcytlbitsJUMzJUFEbmVh%7CNzI4NDMwOTA3%7C&_esuh=3D_11_ba12a888ff08=
+d0c69fb55dcc379d0e69774e4df5dce1db161fe1d231163bba20
+
+
+Exclusivos en l=C3=ADnea =E2=80=BA
+
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_24&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njkx%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CT2ZlcnRhcw%3D%3D%7CSU1BR0UrbWRfMTM3NjYxNS5qcGc%3D%7CT2Zl=
+cnRhcytwYXJhK3Rp%7CNzI4NDMwOTA3%7C&_esuh=3D_11_b016d2971bfe1301eb3ff203cd6d=
+02253f1f0c5f40d58e8204e2a80eb09aa650
+
+
+Ofertas para ti=C2=A0=E2=80=BA
+
+Descarga la app:
+
+App Store
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_26&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njkz%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wMS5wbmc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_2044898e1232ec82cb97bb8c2caaf5f458161129456bd96c1fc0d69f1f3c4248
+
+
+Google Play
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_28&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njk1%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wMy5wbmc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_30d874a856c1626680604100f496417af672dd896adc410e4e2668b320bed6fb
+
+
+App Gallery
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_30&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njk3%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wNS5wbmc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_6ea0a18487cf6153727863ecd6b21be8ab324e301fe8397904b07e516e204ef4
+
+
+Env=C3=ADos nacionales, conoce m=C3=A1s
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_32&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njk5%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTIwMTAxOC5wbmc%3D%7C=
+RW52JUMzJUFEb3MrbmFjaW9uYWxlcw%3D%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_9cf596ef=
+1496b92f314796806d968759fe9a4bc847b48e4f12f21cbfff898bfb
+
+
+Entrega en tienda, conoce m=C3=A1s
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_34&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzAx%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CRW50cmVnYStlbit0aWVuZGE%3D%7CSU1BR0UrbWRfMTIwMTAyMC5wbmc=
+%3D%7CRW50cmVnYStlbit0aWVuZGE%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_7115bc5aa97e=
+9820b695cb277cbce0b76b5274c337352b4544c1a610a3bf0871
+
+
+El cr=C3=A9dito es tuyo, solic=C3=ADtalo ahora
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_36&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzAz%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CU29saWNpdHVkK2RlK2NyJUMzJUE5ZGl0bw%3D%3D%7CSU1BR0UrbWRfM=
+TIwMTAyMS5wbmc%3D%7CRWwrY3IlQzMlQTlkaXRvK2VzK3R1eW8%3D%7CNzI4NDMwOTA3%7C&_e=
+suh=3D_11_24901879cfa44598f5a25d316e76b662bda1f8b541de158c03e7a301de4e62ed
+
+
+Ubica tu tienda, clic aqu=C3=AD
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_38&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzA1%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTIwMTAyMi5wbmc%3D%7C=
+SW1hZ2VuK2glQzMlQTlyb2U%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_5d1b7a099eef54a876=
+1f3a8609b9d00448d6b2f6e5242b00ad057a1e8d7ff39e
+
+
+S=C3=ADguenos:
+
+Youtube
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_40&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzA3%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzAxLnBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C=
+&_esuh=3D_11_c9d9197861c20633fa69d6a4e6210b51c88ab9b6a18ee8c4450d18a58d9dfc=
+b8
+
+
+Facebook
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_42&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzA5%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzAzLnBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C=
+&_esuh=3D_11_c92ad5bde51a51e0488dfc1c251d09a4b6020353611d66546af6189a03ac16=
+02
+
+
+Instagram
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_44&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzEx%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzA1LnBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C=
+&_esuh=3D_11_2ce9370e97dadf6af91e2c19aea5c7746661d216a2b5b631c26b34cb6d9470=
+3a
+
+
+Tik Tok
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_46&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzEz%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrbWRfMTUyNTM3Mi5wbmc%3D%7C%7CNzI4NDMwOTA3%7C&_=
+esuh=3D_11_1c0df65f0fb03633d585b1ef2e98cf4969c1abd8bc095b6cf03a4faf7804fc97
+
+
+=C2=A1Si no puedes ver bien este correo, pulsa este enlace
+https://links.coppel.com/u/gm.php?prm=3DkKFKd5OLVo_766895328_8818643_620196=
+13&_esuh=3D_11_cf17e00e95735c873b32dbeddbb984c7837e443d8d7431a5dabec493962b=
+fca4
+.
+=C2=A0 =C2=A0Agrega clientes@mailing.coppel.com=C2=A0a tu lista de contacto=
+s
+
+Compra en l=C3=ADnea llamando al: 800 220 7735
+tel:1-800-220-7735=20
+
+Con el objeto de ofrecerle un buen servicio, hemos establecido t=C3=A9rmino=
+s
+y
+condiciones
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_48&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzE1%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CdCVDMyVBOXJtaW5vcyt5K2NvbmRpY2lvbmVz%7C%7CNzI4NDMwOTA=
+3%7C&_esuh=3D_11_34665d6355eafeaaa352c3a3e09d92de431f8a7ccffe0f4362fed93419=
+e955d7
+
+bajo las cuales delimitan las =C3=A1reas de responsabilidad y derechos,
+tanto de las
+Tiendas Coppel como de nuestros clientes. Cabe se=C3=B1alar, que al momento
+de la
+compra se puede solicitar pago inicial el cual podr=C3=A1 modificar el pago
+quincenal
+mostrado.
+
+Los precios, las promociones y la disponibilidad pueden variar seg=C3=BAn l=
+a
+ubicaci=C3=B3n territorial. Errores descriptivos, tipogr=C3=A1ficos y
+fotogr=C3=A1ficos est=C3=A1n
+sujetos a correcci=C3=B3n y Tiendas Coppel no tendr=C3=A1 responsabilidad p=
+or
+dichos
+errores lo cual se tomar=C3=A1 como correcto lo mostrado en Coppel.com
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_50&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzE3%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CQ29wcGVsLmNvbQ%3D%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11=
+_15903a9ce7b2cc0eaa87db45c59851b50a968411857810417260780eead635e5
+.
+
+Este mensaje electr=C3=B3nico, incluyendo cualquier anexo, est=C3=A1n dirig=
+idos
+exclusivamente para el uso del cliente y/o la persona f=C3=ADsica a la cual
+est=C3=A1
+dirigido la informaci=C3=B3n. Los datos utilizados para el env=C3=ADo de es=
+te
+mensaje
+proceden de nuestra base de datos, el cual tiene fines de comunicaci=C3=B3n
+mercadot=C3=A9cnicos, publicitarios y de prospecci=C3=B3n comercial. Para
+ejercitar sus
+derechos de acceso, rectificaci=C3=B3n, cancelaci=C3=B3n u oposici=C3=B3n, =
+usted
+puede acceder
+en los t=C3=A9rminos establecidos en nuestro *aviso de privacidad*
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_52&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzE5%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7C%7CJTJBYXZpc28rZGUrcHJpdmFjaWRhZCUyQQ%3D%3D%7C%7CNzI4NDM=
+wOTA3%7C&_esuh=3D_11_be33be14d4d4ae4772b66afd52bc89d796f6c8519c52a0f60ac7b8=
+e30fc6615e
+
+contenido en el portal de internet antes indicado. La informaci=C3=B3n que
+se llegara
+a obtener por este medio, ser=C3=A1 tratada conforme a los principios
+establecidos en
+la Ley Federal de Protecci=C3=B3n de Datos Personales en Posesi=C3=B3n de l=
+os
+Particulares.
+
+Coppel S. A. de C. V. Calle Rep=C3=BAblica No. 2855 Pte. Colonia Recursos
+Hidr=C3=A1ulicos, Culiac=C3=A1n, Sinaloa, C.P. 80105
+
+Has clic para visitar Coppel.com
+https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_54&ems=
+_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzIx%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWb=
+w%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb=
+25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7=
+CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D%3D%7CSU1BR0UrQ29wcGVsRm9vdGVyTG9nby5wb=
+mc%3D%7CSW1hZ2VuK2glQzMlQTlyb2U%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_0a22526931=
+7a85dee22ae0a56f086295e202c5759bdab48e9ffbc4a4d41d1fed
+
+
+Si no deseas recibir informaci=C3=B3n promocional de=C2=A0Coppel, sigue est=
+e
+enlace:
+Cancelar Subscripci=C3=B3n
+https://links.coppel.com/u/un.php?par=3DkKFKd5OLVo_8818643_62019613_$sid$&_=
+esuh=3D_11_d1ea9d75e89578a7ab1fb0aa4a11702bea1e93f459f1d384a359f084e654476d
+
+
+
+----=_---NextPart--=_-ESMayyRFMa
+Content-Type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" e-locale=3D"en-US" e-is-multilanguage=3D"false">
+<head>
+<title>Coppel</title>
+<meta charset=3D"UTF-8">
+<meta name=3D"viewport" content=3D"initial-scale=3D1, user-scalable=3Dyes">
+<!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedg=
+e"><!--<![endif]-->
+<!--[if (gte mso 9)]>
+<style type=3D"text/css">
+.lh, .lh font{line-height:120% !important;}
+.inpl-not-mailing .lh, .inpl-not-mailing .lh font {line-height:1.2 !importa=
+nt;}
+.lh15p, .lh15p font {line-height:150% !important;}
+.inpl-not-mailing .lh15p, .inpl-not-mailing .lh15p font {line-height:1.5 !i=
+mportant;}
+.lh20p, .lh20p font {line-height:200% !important;}
+.inpl-not-mailing .lh20p, .inpl-not-mailing .lh20p font {line-height:2 !imp=
+ortant;}
+</style>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt=
+; border:0;}
+.ol648 {width:648px;}
+.ol658 {width:658px;}
+.olcta {padding:0 !important; background-color:none !important; background-=
+image:none !important; background:none !important; border:none !important; =
+-moz-border-radius:0 !important; -webkit-border-radius:0 !important; border=
+-radius:0 !important;}
+.olb {display:block !important;}
+.olbg1 {background-color:#555555;}
+.olbg2 {background-color:#555555; background-image:url('https://suite16.ema=
+rsys.net/custloads/765936583/copybasebtnbg.png'); background-repeat:repeat-=
+x;}
+.olbb1 {background-color:#555555; border:2px solid #282828;}
+.olbb2 {background-color:#555555; background-image:url('https://suite16.ema=
+rsys.net/custloads/765936583/copybasebtnbg.png'); background-repeat:repeat-=
+x; border:2px solid #282828;}
+.oltd1 {padding:25px 45px; line-height:normal !important;}
+.oltd2 {padding:15px 45px; line-height:normal !important;}
+.oltd3 {padding:15px 20px; line-height:normal !important;}
+.oltd4 {padding:10px; line-height:normal !important;}
+.olh {height:36px;}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>.ff {font-family:Helvetica, Arial, sans-serif;}
+
+.fs10 {font-size:10px;}
+.fs11 {font-size:11px;}
+.fs12 {font-size:12px;}
+.fs14 {font-size:14px;}
+.fs16 {font-size:16px;}
+.fs17 {font-size:17px;}
+.fs20 {font-size:20px;}
+.fs28 {font-size:28px;}
+.fs30 {font-size:30px;}
+.fs60 {font-size:60px;}
+.fsv {font-size:14px;}
+.fsv2 {font-size:16px;}
+
+.lh, .lh font {line-height:1.2;}
+.lh15p, .lh15p font {line-height:1.5;}
+.lh20p, .lh20p font {line-height:2;}
+
+.fc1 {color:#ffffff;}
+.fc2 {color:#000000;}
+.fc3 {color:#ff0000;}
+.fc4 {color:#555555;}
+.fc5 {color:#0065ae;}
+.fc6 {color:#9b9b9f;}
+
+.tdn {text-decoration:none;}
+.tdu {text-decoration:underline;}
+.tds, .tds span span {text-decoration:line-through;}
+.fwn {font-weight:normal;}
+.fwb {font-weight:bold;}
+.fsi {font-style:italic;}
+
+.vab {vertical-align:bottom;}
+.vat {vertical-align:top;}
+.vam {vertical-align:middle;}
+
+.la1 a {font-weight:normal; text-decoration:none; color:#000000;}
+.la1b a {font-weight:bold; text-decoration:none; color:#000000;}
+.la1u a {font-weight:normal; text-decoration:underline; color:#000000;}
+.la2 a {font-weight:normal; text-decoration:none; color:#ffffff;}
+.la2b a {font-weight:bold; text-decoration:none; color:#ffffff;}
+.la2u a {font-weight:normal; text-decoration:underline; color:#ffffff;}
+.bg1 {background:#58546d;}
+.db {display:block;}
+
+.dp10 {padding:10px;}
+.dp20 {padding:20px;}
+.dplr10 {padding:0 10px;}
+.dplr20 {padding:0 20px;}
+.dptb10 {padding:10px 0;}
+.dplr20tb10 {padding:10px 20px;}
+.dpl10 {padding:0 0 0 10px;}
+.dpr10 {padding:0 10px 0 0;}
+.dpr20 {padding:0 20px 0 0;}
+
+.cta1a {color:#ffffff; font-weight:normal; text-decoration:none; display:bl=
+ock; padding:25px 45px;}
+.cta1b {color:#ffffff; font-weight:normal; text-decoration:none; display:bl=
+ock; padding:15px 45px;}
+.cta1c {color:#ffffff; font-weight:normal; text-decoration:none; display:bl=
+ock; padding:15px 0;}
+.cta2c {color:#ffffff; font-weight:normal; text-decoration:none; display:bl=
+ock; padding:15px 20px;}
+.cta1d {color:#ffffff; font-weight:normal; text-decoration:none; display:bl=
+ock; padding:10px;}
+.bor {border:2px solid #282828;}
+.ctaf {font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#fff=
+fff;}
+.dn {display:none;}
+@media only screen and (max-width:414px) {
+.vab {vertical-align:bottom !important;}
+.vat {vertical-align:top !important;}
+.vam {vertical-align:middle !important;}
+.fl {display:block !important; width:100% !important;}
+.fw {width:100% !important; min-width:0 !important;}
+.sec {width:100% !important; float:none !important;}
+.mh {display:none !important;}
+.image {width:100% !important; height:auto !important;}
+.comt {margin:0 auto !important;}
+.com {text-align:center !important;}
+.lom {text-align:left !important;}
+.rom {text-align:right !important;}
+.gf { font-size:17px !important; font-size:4.72vw !important; }
+.h1 {font-size:24px !important; font-size:6.67vw !important;}
+.h2 {font-size:20px !important; font-size:5.55vw !important;}
+.small {font-size:15px !important; font-size:4.17vw !important;}
+.xsmall {font-size:13px !important; font-size:3.61vw !important;}
+.rwom {width:auto !important;}
+.rhom {height:auto !important;}
+.rw10, .rw10 img {width:10px !important;}
+.rw15, .rw15 img {width:15px !important;}
+.rw20, .rw20 img {width:20px !important;}
+.rw50p {width:50% !important;}
+.rh10, .rh10 img {height:10px !important; height:2.78vw !important;}
+.rh20, .rh20 img {height:20px !important; height:5.55vw !important;}
+.mtop5 {margin-top:5px !important; margin-top:1.39vw !important;}
+.mtop10 {margin-top:10px !important; margin-top:2.78vw !important;}
+.plr10 {padding:0 10px !important;}
+.ptb10 {padding:10px 0 !important; padding:2.78vw 0 !important;}
+.pl10 {padding-left:10px !important;}
+.pr10 {padding-right:5px !important;}
+.pl5 {padding-left:5px !important;}
+.pl25 {padding-left:25px !important;}
+.pr5 {padding-right:5px !important;}
+.pb10 {padding-bottom:10px !important;}
+.pb20 {padding-bottom:20px !important;}
+.pb30 {padding-bottom:30px !important;}
+.pb40 {padding-bottom:40px !important;}
+.p10 {padding:10px 10px !important; padding:2.78vw 10px !important;}
+.nopad {padding: 0 !important;}
+.s1, .s1 img {height:10px !important; height:2.78vw !important;}
+.s2, .s2 img {height:5px !important; height:1.39vw !important;}
+.s3, .s3 img {height:10px !important; height:2.78vw !important;}
+.s4, .s4 img {height:40px !important; height:11.1vw !important;}
+.sm1 {margin-bottom:10px !important; margin-bottom:2.78vw !important;}
+.sm4 {margin-bottom:40px !important; margin-bottom:11.1vw !important;}
+.break {display:block !important;}
+.tlf {table-layout:fixed !important;}
+.nobg {background-color:transparent !important; background-image:none !impo=
+rtant;}
+.mcta1 {padding:10px !important; padding:2.77vw 10px !important;}
+.mcta1a {padding:10px !important; padding:2.77vw 10px !important; backgroun=
+d:#56c5c9 !important; background:-moz-linear-gradient(top, #56c5c9 0%, #10a=
+5a1 50%, #406f62 100%) !important; background:-webkit-linear-gradient(top, =
+#56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; background:linear-gradient=
+(to bottom, #56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; filter:progid:=
+DXImageTransform.Microsoft.gradient( startColorstr=3D'#56c5c9', endColorstr=
+=3D'#406f62',GradientType=3D0 ) !important;}
+.mcta2 {padding:10px !important; padding:2.77vw 10px !important; -moz-borde=
+r-radius:10px; -webkit-border-radius:10px; border-radius:10px; -moz-border-=
+radius:2.77vw; -webkit-border-radius:2.77vw; border-radius:2.77vw;}
+.mcta2a {padding:10px !important; padding:2.77vw 10px !important; -moz-bord=
+er-radius:10px; -webkit-border-radius:10px; border-radius:10px; -moz-border=
+-radius:2.77vw; -webkit-border-radius:2.77vw; border-radius:2.77vw; backgro=
+und:#56c5c9 !important; background:-moz-linear-gradient(top, #56c5c9 0%, #1=
+0a5a1 50%, #406f62 100%) !important; background:-webkit-linear-gradient(top=
+, #56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; background:linear-gradie=
+nt(to bottom, #56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; filter:progi=
+d:DXImageTransform.Microsoft.gradient( startColorstr=3D'#56c5c9', endColors=
+tr=3D'#406f62',GradientType=3D0 ) !important;}
+.mcta3 {padding:10px !important; padding:2.77vw 10px !important; -moz-borde=
+r-radius:20px; -webkit-border-radius:20px; border-radius:20px; -moz-border-=
+radius:5.55vw; -webkit-border-radius:5.55vw; border-radius:5.55vw;}
+.mcta3a {padding:10px !important; padding:2.77vw 10px !important; -moz-bord=
+er-radius:20px; -webkit-border-radius:20px; border-radius:20px; -moz-border=
+-radius:5.55vw; -webkit-border-radius:5.55vw; border-radius:5.55vw; backgro=
+und:#56c5c9 !important; background:-moz-linear-gradient(top, #56c5c9 0%, #1=
+0a5a1 50%, #406f62 100%) !important; background:-webkit-linear-gradient(top=
+, #56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; background:linear-gradie=
+nt(to bottom, #56c5c9 0%,#10a5a1 50%,#406f62 100%) !important; filter:progi=
+d:DXImageTransform.Microsoft.gradient( startColorstr=3D'#56c5c9', endColors=
+tr=3D'#406f62',GradientType=3D0 ) !important;}
+u + .body .gwfw { width:100% !important; width:100vw !important;}
+}
+@media only screen and (width:375px) {.iph {padding:0 8px 0 7px !important;=
+}}
+<!--
+body {margin:0; padding:0; background:#f9f9f9; -webkit-text-size-adjust:non=
+e; -ms-text-size-adjust:none;}
+a, a:active, a:visited, .yshortcuts, .yshortcuts a span {text-decoration:no=
+ne; font-weight:normal; color: #000000;}
+a[x-apple-data-detectors] {color: inherit !important; text-decoration: none=
+ !important; font-size: inherit !important; font-family: inherit !important=
+; font-weight: inherit !important; line-height: inherit !important;}
+[office365] td div, [office365] button {display:block !important;}
+table th {padding:0; Margin:0; border:0; font-weight:normal; vertical-align=
+:top;}
+--></style>
+</head>
+<body class=3D"body"><div ems:preheader style=3D"display:none!important;fon=
+t-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opaci=
+ty:0;overflow:hidden;mso-hide:all">An=C3=ADmate a estrenar con esta selecci=
+=C3=B3n de productos.</div>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" heig=
+ht=3D"100%" bgcolor=3D"#f9f9f9" class=3D"gwfw">
+<tr>
+<td width=3D"100%" align=3D"center" valign=3D"top">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"658" class=
+=3D"ol658 fw">
+<tr>
+<td style=3D"padding:0 5px;" class=3D"iph">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"648" bgcol=
+or=3D"#f9f9f9" class=3D"ol648 fw">
+<tr e-block-id=3D"637c565f5d6369d626000001">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"591adc7935bd574f770000cc">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a e-editable=3D"link1" href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_1&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2NjY4%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ2=
+9wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTI1NzI3OC5wbmc%3D%7CTG9nbytDb3BwZWwuY29t%=
+7CNzI4NDMwOTA3%7C&_esuh=3D_11_3192463aff6c839d7834bd031056dc2d54425cb18901d=
+cd1f4549f770449dbd0" target=3D"_blank" title=3D"Visitar Coppel.com" style=
+=3D"text-decoration: none; font-weight: normal; color: #000000;"><img e-edi=
+table=3D"img1" src=3D"https://links.coppel.com/custloads/766895328/md_12572=
+78.png" width=3D"216" border=3D"0" style=3D"display: block; width: 216px;" =
+alt=3D"Haz clic para visitar Coppel.com"></a></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f072dea56a68fadb5000002">
+<td bgcolor=3D"#f9f9f9">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vam" align=3D"center" style=3D"vertical-align: middle;" valign=
+=3D"middle">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><a e-ed=
+itable=3D"link1" href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_=
+62019613_8818643_1_3&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njcw%7Ca0tGS2Q1T0xW=
+bw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQ=
+nJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7=
+CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CRWxlY3Ryb25pY2E%3D%7CRWxlY3RyJUM=
+zJUIzbmljYQ%3D%3D%7CRWxlY3RyJUMzJUIzbmljYQ%3D%3D%7CNzI4NDMwOTA3%7C&_esuh=3D=
+_11_815c60844eb392345ecd6fa4300825781589da1f553f3e24199206e5fe54dba7" targe=
+t=3D"_blank" class=3D"fc2 tdn" title=3D"Salas" style=3D"font-weight: normal=
+; color: #000000; text-decoration: none;"><font class=3D"ff fsv fc2" e-edit=
+able=3D"nav1" style=3D"font-family: Helvetica, Arial, sans-serif; font-size=
+: 14px; color: #000000;">Electr=C3=B3nica</font></a></td>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><font c=
+lass=3D"ff fsv fc2" e-editable=3D"line1" style=3D"font-family: Helvetica, A=
+rial, sans-serif; font-size: 14px; color: #000000;">|</font></td>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><a e-ed=
+itable=3D"link2" href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_=
+62019613_8818643_1_5&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njcy%7Ca0tGS2Q1T0xW=
+bw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQ=
+nJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7=
+CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ2VsdWxhcmVz%7CQ2VsdWxhcmVz%7CQ2=
+VsdWxhcmVz%7CNzI4NDMwOTA3%7C&_esuh=3D_11_c1bc8d9d9db0885c55c0027aff8e67c9f6=
+6c77cbef55c560293b7b46ac1d44cb" target=3D"_blank" class=3D"fc2 tdn" title=
+=3D"Comedores" style=3D"font-weight: normal; color: #000000; text-decoratio=
+n: none;"><font class=3D"ff fsv fc2" e-editable=3D"nav2" style=3D"font-fami=
+ly: Helvetica, Arial, sans-serif; font-size: 14px; color: #000000;">Celular=
+es</font></a></td>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><font c=
+lass=3D"ff fsv fc2" e-editable=3D"line2" style=3D"font-family: Helvetica, A=
+rial, sans-serif; font-size: 14px; color: #000000;">|</font></td>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><a e-ed=
+itable=3D"link3" href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_=
+62019613_8818643_1_7&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njc0%7Ca0tGS2Q1T0xW=
+bw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQ=
+nJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7=
+CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CSG9nYXI%3D%7CSG9nYXI%3D%7CSG9nYX=
+I%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_f41bfdd98c863aecd326978259b69eb28251e87a=
+909d6dd19e4d16e56d064ff5" target=3D"_blank" class=3D"fc2 tdn" title=3D"Elec=
+trodom=C3=A9sticos" style=3D"font-weight: normal; color: #000000; text-deco=
+ration: none;"><font class=3D"ff fsv fc2" e-editable=3D"nav3" style=3D"font=
+-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #000000;">Ho=
+gar</font></a></td>
+<td align=3D"center" class=3D"dpr10" style=3D"padding: 0 10px 0 0;"><font c=
+lass=3D"ff fsv fc2" e-editable=3D"line3" style=3D"font-family: Helvetica, A=
+rial, sans-serif; font-size: 14px; color: #000000;">|</font></td>
+<td align=3D"center"><a e-editable=3D"link4" href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_9&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2Njc2%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CT2=
+ZlcnRhcw%3D%3D%7CT0ZFUlRBUw%3D%3D%7CT3V0bGV0%7CNzI4NDMwOTA3%7C&_esuh=3D_11_=
+8c8c0d91e9dc2d88677abe99eaad8343df61a592067fc31b527f0db3f789ce83" target=3D=
+"_blank" class=3D"fc2 tdn fwb" title=3D"OFERTAS" style=3D"color: #000000; t=
+ext-decoration: none; font-weight: bold;"><font class=3D"ff fsv fc3 fwb" e-=
+editable=3D"nav4" style=3D"font-family: Helvetica, Arial, sans-serif; font-=
+size: 14px; color: #ff0000; font-weight: bold;">OFERTAS</font></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"62f9e022102391457f000002">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"62ba31e0b69a7c9063000001">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td height=3D"30"><div></div></td> </tr>
+<tr>
+<td align=3D"center" class=3D"lh dplr20 com" style=3D"line-height: 1.2; pad=
+ding: 0 20px;"><font class=3D"ff fs20 fc2" style=3D"font-family: Helvetica,=
+ Arial, sans-serif; font-size: 20px; color: #000000; line-height: 1.2;"><sp=
+an e-editable=3D"Bodycopy"><span style=3D"font-size: 27px;">Estos productos=
+ podr=C3=ADan interesarte:</span></span></font></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td> </tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"62ba29602891696fc5000002">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_11&ems_l=3D11128250&i=3D1&d=3Da0tGS2Q1T0xWbw%3D%3=
+D%7CNjY4NDQ2Njc4%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdG=
+l6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50a=
+WxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CU=
+HJlZGljdA%3D%3D%7CSU1BR0UrMS5qcGclM0ZjaSUzRCUyNHBlcnNfNTE2NjklMjQ%3D%7CUHJl=
+ZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4NDMwOTA3%7C&_esuh=3D_11_3ac08efaa219c0177277=
+5f91ca01c02d18a912da8ad0dfa104b6856fee190d07" style=3D"text-decoration: non=
+e; font-weight: normal; color: #000000;" target=3D"_blank"><img e-editable=
+=3D"Image" src=3D"https://links.coppel.com/predict/recommender/17FBFD0A3117=
+95A0/ostmqf/1.jpg?ci=3DkKFKd5OLVo" width=3D"648" border=3D"0" style=3D"disp=
+lay:block;" class=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"62ba329fb69a7c9063000002">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"655c4107155c488401000002">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"62ba29d12891696fc5000003">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fw">
+<tr>
+<th class=3D"fl pb30" style=3D"padding: 0; Margin: 0; border: 0; font-weigh=
+t: normal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" valign=3D"top"><a href=3D"https://links.coppel.com/u/n=
+rd.php?p=3DkKFKd5OLVo_62019613_8818643_1_13&ems_l=3D11128250&i=3D1&d=3Da0tG=
+S2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njgw%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%=
+3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lcz=
+NQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%=
+3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMS5qcGclM0ZjaSUzRCU3QiU3QmNvbnRhY3=
+QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_205096698f3adbb84d422cacece5ccd826cedd40f63d7f7de74254e8cb1e7ad4" st=
+yle=3D"text-decoration: none; font-weight: normal; color: #000000;" target=
+=3D"_blank"><img src=3D"https://links.coppel.com/predict/recommender/17FBFD=
+0A311795A0/t1ylyp/1.jpg?ci=3DkKFKd5OLVo" width=3D"156" e-editable=3D"Img1" =
+border=3D"0" style=3D"display:block;" class=3D"image"></a></td>
+<td width=3D"8"><div></div></td>
+<td align=3D"center" valign=3D"top"><a href=3D"https://links.coppel.com/u/n=
+rd.php?p=3DkKFKd5OLVo_62019613_8818643_1_15&ems_l=3D11128250&i=3D1&d=3Da0tG=
+S2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njgy%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%=
+3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lcz=
+NQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%=
+3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMi5qcGclM0ZjaSUzRCU3QiU3QmNvbnRhY3=
+QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_cd8bb1d75126333acd1a6fe6735c81e53adcb75dea820291702622751a3c4745" st=
+yle=3D"text-decoration: none; font-weight: normal; color: #000000;" target=
+=3D"_blank"><img src=3D"https://links.coppel.com/predict/recommender/17FBFD=
+0A311795A0/t1ylyp/2.jpg?ci=3DkKFKd5OLVo" width=3D"156" e-editable=3D"Img2" =
+border=3D"0" style=3D"display:block;" class=3D"image"></a></td>
+</tr>
+</table>
+</th>
+<th width=3D"8" class=3D"fl" style=3D"padding: 0; Margin: 0; border: 0; fon=
+t-weight: normal; vertical-align: top;" valign=3D"top"><div></div></th>
+<th class=3D"fl" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" valign=3D"top"><a href=3D"https://links.coppel.com/u/n=
+rd.php?p=3DkKFKd5OLVo_62019613_8818643_1_17&ems_l=3D11128250&i=3D1&d=3Da0tG=
+S2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njg0%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%=
+3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lcz=
+NQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%=
+3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrMy5qcGclM0ZjaSUzRCU3QiU3QmNvbnRhY3=
+QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_4a7489d4e7dd5d33a995f5604b1f9a267a4e1e25872f5b4e8f91dcce30976a09" st=
+yle=3D"text-decoration: none; font-weight: normal; color: #000000;" target=
+=3D"_blank"><img src=3D"https://links.coppel.com/predict/recommender/17FBFD=
+0A311795A0/t1ylyp/3.jpg?ci=3DkKFKd5OLVo" width=3D"156" e-editable=3D"Img3" =
+border=3D"0" style=3D"display:block;" class=3D"image"></a></td>
+<td width=3D"8"><div></div></td>
+<td align=3D"center" valign=3D"top"><a href=3D"https://links.coppel.com/u/n=
+rd.php?p=3DkKFKd5OLVo_62019613_8818643_1_19&ems_l=3D11128250&i=3D1&d=3Da0tG=
+S2Q1T0xWbw%3D%3D%7CNjY4NDQ2Njg2%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%=
+3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lcz=
+NQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%=
+3D%7CMDE%3D%7CUHJlZGljdA%3D%3D%7CSU1BR0UrNC5qcGclM0ZjaSUzRCU3QiU3QmNvbnRhY3=
+QuNTE2NjklN0QlN0Q%3D%7CUHJlZGljdCtNYWlsK1BlcnNvbmFs%7CNzI4NDMwOTA3%7C&_esuh=
+=3D_11_a2b66c83193b01c2060e0be80d938eae1671ceaaffc66b5e58de7059cdd4a715" st=
+yle=3D"text-decoration: none; font-weight: normal; color: #000000;" target=
+=3D"_blank"><img src=3D"https://links.coppel.com/predict/recommender/17FBFD=
+0A311795A0/t1ylyp/4.jpg?ci=3DkKFKd5OLVo" width=3D"156" e-editable=3D"Img4" =
+border=3D"0" style=3D"display:block;" class=3D"image"></a></td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"63751f1a5cf7457d98000001">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"62e814186dfed04adf000002">
+<td height=3D"20" bgcolor=3D"#f9f9f9"><div></div></td>
+</tr><tr e-block-id=3D"62ba32c1b69a7c9063000003">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"600" class=
+=3D"fw">
+<tr>
+<th align=3D"left" valign=3D"top" class=3D"vat fl" style=3D"padding: 0; Mar=
+gin: 0; border: 0; font-weight: normal; vertical-align: top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"324" class=
+=3D"fw">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.coppel.com/u/nrd.php?p=
+=3DkKFKd5OLVo_62019613_8818643_1_21&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njg4=
+%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdG=
+ljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9Kd=
+W5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D=
+%3D%7CSU1BR0UrbWRfMTM3NjYxMy5qcGc%3D%7CRXhjbHVzaXZvcytlbitsJUMzJUFEbmVh%7CN=
+zI4NDMwOTA3%7C&_esuh=3D_11_16da55b925220fad7b76ff11ea9001e19492ce4e3eb7836b=
+ea69be7646574902" style=3D"text-decoration: none; font-weight: normal; colo=
+r: #000000;" target=3D"_blank"><img e-editable=3D"Image1" src=3D"https://li=
+nks.coppel.com/custloads/766895328/md_1376613.jpg" width=3D"324" border=3D"=
+0" style=3D"display: block; width: 324px;" class=3D"image" alt></a></td>
+</tr>
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#999182">
+<tr>
+<td align=3D"center" class=3D"oltd3"><a href e-editable=3D"cta_href1" targe=
+t=3D"_blank" class=3D"olcta cta1c" style=3D"color: #ffffff; font-weight: no=
+rmal; text-decoration: none; display: block; padding: 15px 0;"><font class=
+=3D"ctaf" style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 15=
+px; color: #ffffff;"><span e-editable=3D"CTA1">Exclusivos en l=C3=ADnea =E2=
+=80=BA</span></font></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</th>
+<th align=3D"left" valign=3D"top" class=3D"vat fl" style=3D"padding: 0; Mar=
+gin: 0; border: 0; font-weight: normal; vertical-align: top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"324" class=
+=3D"fw">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.coppel.com/u/nrd.php?p=
+=3DkKFKd5OLVo_62019613_8818643_1_23&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njkw=
+%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdG=
+ljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9Kd=
+W5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CT2ZlcnRhcw%3D%3D%=
+7CSU1BR0UrbWRfMTM3NjYxNS5qcGc%3D%7CT2ZlcnRhcytwYXJhK3Rp%7CNzI4NDMwOTA3%7C&_=
+esuh=3D_11_34603158141bea0bb886ddc09e56f1445d680bf6a22fc4044431cb94b8101607=
+" style=3D"text-decoration: none; font-weight: normal; color: #000000;" tar=
+get=3D"_blank"><img e-editable=3D"Image2" src=3D"https://links.coppel.com/c=
+ustloads/766895328/md_1376615.jpg" width=3D"324" border=3D"0" style=3D"disp=
+lay: block; width: 324px;" class=3D"image" alt></a></td>
+</tr>
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#585557">
+<tr>
+<td align=3D"center" class=3D"oltd3"><a href e-editable=3D"cta_href2" targe=
+t=3D"_blank" class=3D"olcta cta1c" style=3D"color: #ffffff; font-weight: no=
+rmal; text-decoration: none; display: block; padding: 15px 0;"><font class=
+=3D"ctaf" style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 15=
+px; color: #ffffff;"><span e-editable=3D"CTA2">Ofertas para ti&nbsp;=E2=80=
+=BA</span></font></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"6182bdd93946a811ad000003">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><img e-editable=3D"Image" src=3D"https://links.coppel.=
+com/custloads/766895328/md_1201023.png" width=3D"648" border=3D"0" style=3D=
+"display: block; width: 648px;" class=3D"image" alt></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"65dcc33624125d358c000001">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<th class=3D"fl ptb10" style=3D"padding: 0; Margin: 0; border: 0; font-weig=
+ht: normal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"160" align=
+=3D"center">
+<tr>
+<td align=3D"center" height=3D"32"><font class=3D"ff fc5 fwb" style=3D"font=
+-family: Helvetica, Arial, sans-serif; color: #0065ae; font-weight: bold;">=
+<span e-editable=3D"socialtext">Descarga la app:</span></font></td>
+<td width=3D"10"><div></div></td>
+</tr>
+</table>
+</th>
+<th class=3D"fl" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_25&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njky%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wMS5wb=
+mc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_42f009a0b5b851af2096962d05022927f6fb=
+c357c63922ef63bf9e3299e29aa8" target=3D"_blank" e-editable=3D"sociallink1" =
+style=3D"text-decoration: none; font-weight: normal; color: #000000;"><img =
+src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Apps_01.png" he=
+ight=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"social1" alt=
+=3D"App Store"></a></td>
+<td width=3D"10"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_27&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njk0%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wMy5wb=
+mc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_dd32a688fd77c9a7a7080260857050df7913=
+38ca923e509f0410cefa5de75789" target=3D"_blank" e-editable=3D"sociallink2" =
+style=3D"text-decoration: none; font-weight: normal; color: #000000;"><img =
+src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Apps_03.png" he=
+ight=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"social2" alt=
+=3D"Google Play"></a></td>
+<td width=3D"10"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_29&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2Njk2%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrQXBwc18wNS5wb=
+mc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_6c54353247043a8e05de794f178939b5501d=
+da60c20f211c8c61c61cfab0a169" target=3D"_blank" e-editable=3D"sociallink3" =
+style=3D"text-decoration: none; font-weight: normal; color: #000000;"><img =
+src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Apps_05.png" he=
+ight=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"social3" alt=
+=3D"App Gallery"></a></td>
+</tr>
+</table>
+</th>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"6182bd0e3946a811ad000002">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fw">
+<tr>
+<th class=3D"fl pb30" style=3D"padding: 0; Margin: 0; border: 0; font-weigh=
+t: normal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" valign=3D"top"><a title href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_31&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2Njk4%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ2=
+9wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTIwMTAxOC5wbmc%3D%7CRW52JUMzJUFEb3MrbmFja=
+W9uYWxlcw%3D%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_19104b3b91f2a09da16bf1a156619=
+daa92ffe608035da39bffd1b418127b1bcd" style=3D"text-decoration: none; font-w=
+eight: normal; color: #000000;" target=3D"_blank"><img src=3D"https://links=
+.coppel.com/custloads/766895328/md_1201018.png" width=3D"156" e-editable=3D=
+"Img1" border=3D"0" style=3D"display: block; width: 156px;" class=3D"image"=
+ alt=3D"Env=C3=ADos nacionales, conoce m=C3=A1s"></a></td>
+<td width=3D"8"><div></div></td>
+<td align=3D"center" valign=3D"top"><a title href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_33&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2NzAw%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CRW=
+50cmVnYStlbit0aWVuZGE%3D%7CSU1BR0UrbWRfMTIwMTAyMC5wbmc%3D%7CRW50cmVnYStlbit=
+0aWVuZGE%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_53560c8158c88526d1d620577898ffe71=
+856f46fb184435abfc357600043beae" style=3D"text-decoration: none; font-weigh=
+t: normal; color: #000000;" target=3D"_blank"><img src=3D"https://links.cop=
+pel.com/custloads/766895328/md_1201020.png" width=3D"156" e-editable=3D"Img=
+2" border=3D"0" style=3D"display: block; width: 156px;" class=3D"image" alt=
+=3D"Entrega en tienda, conoce m=C3=A1s"></a></td>
+</tr>
+</table>
+</th>
+<th width=3D"8" class=3D"fl" style=3D"padding: 0; Margin: 0; border: 0; fon=
+t-weight: normal; vertical-align: top;" valign=3D"top"><div></div></th>
+<th class=3D"fl" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" valign=3D"top"><a title href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_35&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2NzAy%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CU2=
+9saWNpdHVkK2RlK2NyJUMzJUE5ZGl0bw%3D%3D%7CSU1BR0UrbWRfMTIwMTAyMS5wbmc%3D%7CR=
+WwrY3IlQzMlQTlkaXRvK2VzK3R1eW8%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_4a046ea652c=
+44a93dde1213e65cbcce342c54e1a088aa10d82b02271a313befd" style=3D"text-decora=
+tion: none; font-weight: normal; color: #000000;" target=3D"_blank"><img sr=
+c=3D"https://links.coppel.com/custloads/766895328/md_1201021.png" width=3D"=
+156" e-editable=3D"Img3" border=3D"0" style=3D"display: block; width: 156px=
+;" class=3D"image" alt=3D"El cr=C3=A9dito es tuyo, solic=C3=ADtalo ahora"><=
+/a></td>
+<td width=3D"8"><div></div></td>
+<td align=3D"center" valign=3D"top"><a title href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_37&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2NzA0%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ2=
+9wcGVsLmNvbQ%3D%3D%7CSU1BR0UrbWRfMTIwMTAyMi5wbmc%3D%7CSW1hZ2VuK2glQzMlQTlyb=
+2U%3D%7CNzI4NDMwOTA3%7C&_esuh=3D_11_72e1b62bb02d2e5f02fdfc8c0e746c791f2ab7d=
+1f87689bbb6049918741a2bcd" style=3D"text-decoration: none; font-weight: nor=
+mal; color: #000000;" target=3D"_blank"><img src=3D"https://links.coppel.co=
+m/custloads/766895328/md_1201022.png" width=3D"156" e-editable=3D"Img4" bor=
+der=3D"0" style=3D"display: block; width: 156px;" class=3D"image" alt=3D"Ub=
+ica tu tienda, clic aqu=C3=AD"></a></td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"65dcc33f24125d358c000002">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td align=3D"center" class=3D"lh" style=3D"line-height: 1.2;"><font class=
+=3D"ff fs18 fc5 fwb" style=3D"font-family: Helvetica, Arial, sans-serif; co=
+lor: #0065ae; font-weight: bold; line-height: 1.2;"><span e-editable=3D"soc=
+ialtext">S=C3=ADguenos:</span></font></td>
+<td width=3D"20"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_39&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzA2%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzAxL=
+nBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_de7f7faf220c4bc1f5efcbd20fa5ec=
+bf8e9bc38951268083486507f69bd00570" target=3D"_blank" e-editable=3D"sociall=
+ink1" style=3D"text-decoration: none; font-weight: normal; color: #000000;"=
+><img src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Social_01=
+.png" height=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"soci=
+al1" alt=3D"Youtube"></a></td>
+<td width=3D"20"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_41&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzA4%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzAzL=
+nBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_786b44412b40666a83eb6c751b144b=
+a116a31c84f031feff36043c334af18d34" target=3D"_blank" e-editable=3D"sociall=
+ink2" style=3D"text-decoration: none; font-weight: normal; color: #000000;"=
+><img src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Social_03=
+.png" height=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"soci=
+al2" alt=3D"Facebook"></a></td>
+<td width=3D"20"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_43&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzEw%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrU29jaWFsXzA1L=
+nBuZw%3D%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_1a31ab68e4e8d0d8752c833c810f25=
+a425ed09b5c952c3932982777253960bfd" target=3D"_blank" e-editable=3D"sociall=
+ink3" style=3D"text-decoration: none; font-weight: normal; color: #000000;"=
+><img src=3D"http://demo.emarsys.net/custloads/210574935/CoppelMX/Social_05=
+.png" height=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"soci=
+al3" alt=3D"Instagram"></a></td>
+<td width=3D"20"><div></div></td>
+<td align=3D"center"><a href=3D"https://links.coppel.com/u/nrd.php?p=3DkKFK=
+d5OLVo_62019613_8818643_1_45&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzEy%7Ca0tG=
+S2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdGljQWJhb=
+mRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9KdW5pbzIw=
+MjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CSU1BR0UrbWRfMTUyNTM3M=
+i5wbmc%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_343a2816aaf8e478f65b1d056ac67bb2=
+194b68b088b6ff6d357bcb3acc24b3e1" target=3D"_blank" e-editable=3D"sociallin=
+k1" style=3D"text-decoration: none; font-weight: normal; color: #000000;"><=
+img src=3D"https://links.coppel.com/custloads/766895328/md_1525372.png" hei=
+ght=3D"32" border=3D"0" style=3D"display:block" e-editable=3D"social4" alt=
+=3D"Tik Tok"></a></td>
+<td width=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"591acf13c10f6e42180000b5">
+<td bgcolor=3D"#efefef">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"10"><div></div></td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh plr10" style=3D"line-height: 1.2;"><font e=
+-editable=3D"text1" class=3D"ff fs11 fc2" style=3D"font-family: Helvetica, =
+Arial, sans-serif; font-size: 11px; color: #000000; line-height: 1.2;">=C2=
+=A1Si no puedes ver bien este correo, <a e-editable=3D"link" href=3D"" targ=
+et=3D"_blank" class=3D"fc2 fwn tdn" e-block-id=3D"591acf13c10f6e42180000b5"=
+ style=3D"color: #000000; text-decoration: none; font-weight: normal; outli=
+ne: none;" rel=3D"noopener" title=3D"Pulsa este enlace"><span class=3D"ff f=
+s11 fc2 tdu" style=3D"font-family: Helvetica, Arial, sans-serif; font-size:=
+ 11px; color: #000000; text-decoration: underline; outline: none;" data-lin=
+k-attributes=3D"%7B%22href%22:%22%22,%22target%22:%22_blank%22%7D">pulsa es=
+te enlace</span></a>.&nbsp; &nbsp; &nbsp;Agrega clientes@mailing.coppel.com=
+&nbsp;a tu lista de contactos</font></td>
+</tr>
+<tr>
+<td height=3D"10"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f47fd2ed1e5499d4a000001">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"10"><div></div></td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh plr10" style=3D"line-height: 1.2;"><font e=
+-editable=3D"text1" class=3D"ff fs12 fc2" style=3D"font-family: Helvetica, =
+Arial, sans-serif; font-size: 12px; color: #000000; line-height: 1.2;">Comp=
+ra en l=C3=ADnea llamando al: <a e-editable=3D"link" href=3D"tel:1-800-220-=
+7735" target=3D"_blank" ems:notrack=3D"true" class=3D"fc2 fwn tdn" e-block-=
+id=3D"5f47fd2ed1e5499d4a000001" style=3D"color: #000000; text-decoration: n=
+one; font-weight: normal; outline: none;" rel=3D"noopener" title=3D"Telefon=
+o "><span class=3D"ff fs12 fc2 tdu fwb" style=3D"font-family: Helvetica, Ar=
+ial, sans-serif; font-size: 12px; color: #000000; text-decoration: underlin=
+e; font-weight: bold; outline: none;" data-link-attributes=3D"%7B%22href%22=
+:%22tel:1-800-220-7735%22,%22target%22:%22_blank%22%7D">800 220 7735</span>=
+</a></font></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"617b1b9675f186d43b000004">
+<td bgcolor=3D"#f9f9f9">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"540" class=
+=3D"fw" align=3D"center">
+<tr>
+<td align=3D"justify" class=3D"lh" style=3D"line-height: 1.2; text-align: j=
+ustify;"><font class=3D"ff fs10 fc6" style=3D"font-family: Helvetica, Arial=
+, sans-serif; font-size: 10px; color: #9b9b9f; line-height: 1.2;"><span e-e=
+ditable=3D"text1">Con el objeto de ofrecerle un buen servicio, hemos establ=
+ecido <a e-editable=3D"link1" href=3D"https://links.coppel.com/u/nrd.php?p=
+=3DkKFKd5OLVo_62019613_8818643_1_47&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzE0=
+%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdG=
+ljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9Kd=
+W5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7CdCVDMyVBOXJtaW=
+5vcyt5K2NvbmRpY2lvbmVz%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_0ad744ad69377df8792=
+7cccd1204da733ab63623fb80519d84b252adbe98d57c" target=3D"_blank" class=3D"f=
+c5 fwb tdn" style=3D"color: #0065ae; text-decoration: none; font-weight: bo=
+ld;"><font e-editable=3D"link_text1" class=3D"ff fc5 tdu fwb" style=3D"font=
+-family: Helvetica, Arial, sans-serif; color: #0065ae; text-decoration: und=
+erline; font-weight: bold; line-height: 1.2;">t=C3=A9rminos y condiciones</=
+font></a> bajo las cuales delimitan las =C3=A1reas de responsabilidad y der=
+echos, tanto de las Tiendas Coppel como de nuestros clientes. Cabe se=C3=B1=
+alar, que al momento de la compra se puede solicitar pago inicial el cual p=
+odr=C3=A1 modificar el pago quincenal mostrado.<br><br>
+Los precios, las promociones y la disponibilidad pueden variar seg=C3=BAn l=
+a ubicaci=C3=B3n territorial. Errores descriptivos, tipogr=C3=A1ficos y fot=
+ogr=C3=A1ficos est=C3=A1n sujetos a correcci=C3=B3n y Tiendas Coppel no ten=
+dr=C3=A1 responsabilidad por dichos errores lo cual se tomar=C3=A1 como cor=
+recto lo mostrado en <a e-editable=3D"link2" href=3D"https://links.coppel.c=
+om/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_49&ems_l=3D11128250&i=3D1&d=
+=3DNjY4NDQ2NzE2%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl=
+6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aW=
+xsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7C%7=
+CQ29wcGVsLmNvbQ%3D%3D%7C%7CNzI4NDMwOTA3%7C&_esuh=3D_11_49551fdb7ea81e1553f6=
+950a69865db4e3a2201fcbbce6194a39120afe7af78f" target=3D"_blank" class=3D"fc=
+5 fwb tdn" style=3D"color: #0065ae; text-decoration: none; font-weight: bol=
+d;"><font e-editable=3D"link_text2" class=3D"ff fc5 tdu fwb" style=3D"font-=
+family: Helvetica, Arial, sans-serif; color: #0065ae; text-decoration: unde=
+rline; font-weight: bold; line-height: 1.2;">Coppel.com</font></a>.<br><br>
+Este mensaje electr=C3=B3nico, incluyendo cualquier anexo, est=C3=A1n dirig=
+idos exclusivamente para el uso del cliente y/o la persona f=C3=ADsica a la=
+ cual est=C3=A1 dirigido la informaci=C3=B3n. Los datos utilizados para el =
+env=C3=ADo de este mensaje proceden de nuestra base de datos, el cual tiene=
+ fines de comunicaci=C3=B3n mercadot=C3=A9cnicos, publicitarios y de prospe=
+cci=C3=B3n comercial. Para ejercitar sus derechos de acceso, rectificaci=C3=
+=B3n, cancelaci=C3=B3n u oposici=C3=B3n, usted puede acceder en los t=C3=A9=
+rminos establecidos en nuestro <a e-editable=3D"link3" href=3D"https://link=
+s.coppel.com/u/nrd.php?p=3DkKFKd5OLVo_62019613_8818643_1_51&ems_l=3D1112825=
+0&i=3D1&d=3DNjY4NDQ2NzE4%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQX=
+V0b21hdGl6YWNpb25fVGFjdGljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX=
+1BsYW50aWxsYVZDRV9WQl9KdW5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMD=
+E%3D%7C%7CJTJBYXZpc28rZGUrcHJpdmFjaWRhZCUyQQ%3D%3D%7C%7CNzI4NDMwOTA3%7C&_es=
+uh=3D_11_d9adb3134bab277545f899da2a33f3d1ed842acf5f45f9252ecdbb250510fb7a" =
+target=3D"_blank" class=3D"fc5 fwb tdn" style=3D"color: #0065ae; text-decor=
+ation: none; font-weight: bold;"><font e-editable=3D"link_text3" class=3D"f=
+f fc5 tdu fwb" style=3D"font-family: Helvetica, Arial, sans-serif; color: #=
+0065ae; text-decoration: underline; font-weight: bold; line-height: 1.2;">*=
+aviso de privacidad*</font></a> contenido en el portal de internet antes in=
+dicado. La informaci=C3=B3n que se llegara a obtener por este medio, ser=C3=
+=A1 tratada conforme a los principios establecidos en la Ley Federal de Pro=
+tecci=C3=B3n de Datos Personales en Posesi=C3=B3n de los Particulares.<br><=
+br>
+Coppel S. A. de C. V. Calle Rep=C3=BAblica No. 2855 Pte. Colonia Recursos H=
+idr=C3=A1ulicos, Culiac=C3=A1n, Sinaloa, C.P. 80105</span></font></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+<tr>
+<td align=3D"center"><a title href=3D"https://links.coppel.com/u/nrd.php?p=
+=3DkKFKd5OLVo_62019613_8818643_1_53&ems_l=3D11128250&i=3D1&d=3DNjY4NDQ2NzIw=
+%7Ca0tGS2Q1T0xWbw%3D%3D%7Ca0tGS2Q1T0xWbw%3D%3D%7CQXV0b21hdGl6YWNpb25fVGFjdG=
+ljQWJhbmRvbmVkQnJvd3NlX1JlY29tZW5kYWNpb25lczNQTUtQX1BsYW50aWxsYVZDRV9WQl9Kd=
+W5pbzIwMjI%3D%7CMjAyMg%3D%3D%7CMTI%3D%7CMjI%3D%7CMDE%3D%7CQ29wcGVsLmNvbQ%3D=
+%3D%7CSU1BR0UrQ29wcGVsRm9vdGVyTG9nby5wbmc%3D%7CSW1hZ2VuK2glQzMlQTlyb2U%3D%7=
+CNzI4NDMwOTA3%7C&_esuh=3D_11_8135588d31a7febe554497a80b181546b75434bc2e17fb=
+04eab7cdba3ee672bf" style=3D"text-decoration: none; font-weight: normal; co=
+lor: #000000;" target=3D"_blank"><img src=3D"http://demo.emarsys.net/custlo=
+ads/210574935/CoppelMX/CoppelFooterLogo.png" width=3D"195" border=3D"0" sty=
+le=3D"display: block; width: 195px;" e-editable=3D"logo" alt=3D"Has clic pa=
+ra visitar Coppel.com"></a></td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+<tr>
+<td align=3D"center"><font class=3D"ff fs10 fc6" style=3D"font-family: Helv=
+etica, Arial, sans-serif; font-size: 10px; color: #9b9b9f;"><span e-editabl=
+e=3D"text2">Si no deseas recibir informaci=C3=B3n promocional de&nbsp;Coppe=
+l, sigue este enlace: <a e-editable=3D"link3" href=3D"" target=3D"_blank" c=
+lass=3D"fc5 fwb tdn" e-block-id=3D"617b1b9675f186d43b000004" style=3D"color=
+: #0065ae; text-decoration: none; font-weight: bold; outline: none;" rel=3D=
+"noopener"><span class=3D"ff fc5 tdu fwb" style=3D"font-family: Helvetica, =
+Arial, sans-serif; color: #0065ae; text-decoration: underline; font-weight:=
+ bold; outline: none;" data-link-attributes=3D"%7B%22href%22:%22%22,%22targ=
+et%22:%22_blank%22%7D">Cancelar Subscripci=C3=B3n</span></a></span></font><=
+/td>
+</tr>
+<tr>
+<td height=3D"20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"https://links.coppel.com/mo/kKFKd5OLVo_766895328_8818643_620196=
+13_11128250.gif" height=3D"2" width=3D"2" border=3D"0" alt=3D""></body>
+</html>
+----=_---NextPart--=_-ESMayyRFMa--

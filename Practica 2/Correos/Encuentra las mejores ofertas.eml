@@ -1,0 +1,793 @@
+Delivered-To: munozjavier541@gmail.com
+Received: by 2002:a05:7208:9010:b0:8e:6d6d:f117 with SMTP id j16csp649341rbd;
+        Thu, 19 Sep 2024 21:27:03 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFEv4eWigZLB40wmkFpSvjpKmxpSsCVsDKAY2505PwrsXV0nG7zJ8eTbIm6uxKeXqehHybR
+X-Received: by 2002:adf:f28c:0:b0:374:c878:4519 with SMTP id ffacd0b85a97d-37a41497249mr842001f8f.3.1726806423005;
+        Thu, 19 Sep 2024 21:27:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1726806422; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Nt1rzkzr/k0qLBqlI7ObOsl55hCaK5xVbKfaCq5bhKRoKtJhgXQ+ugn+V1U3B8Ndkb
+         6JpFTdMjxRD6nY2PwGOKOlkYEgAFI+yL6zPiSbCNGybg1CvMU7l3hHfbqPTpyfcADxcv
+         Jb+jAJsKrFG5ONba6cK2QUvjm4azbFI0pz0BOTbRxmYOEAHAvocxKJuWS0R1PRIViDS5
+         q56MA6nYwsEVF7xdkY3VEFwyz9AnIifYOsCa73yJMNXPGEjbDppyOdkG525ROhirVEBO
+         gYgO03Rl43o1et9lrrWq8RFCY1eF+ihHspl3RhPp2l/71Y0VqQXM40JC+DVTlP6vElqj
+         Dncg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:list-unsubscribe:feedback-id:precedence
+         :message-id:mime-version:reply-to:to:date:subject:from;
+        bh=ozxERq6eMy4TFz9TLO+ajH4ClWS9ulyoeZfEOmngh8c=;
+        fh=78l0nzp4MN1HKytZ+xpZzh7lMo1xP3+Oyj7biJFh//4=;
+        b=kghPVpbcS6C7XkFHQq1MPKArGf7O0/72s/JS7F3hl2Uns2tWZQOnXJr3tkNSzmuuXV
+         H3Wu8Xiue4H/CDAvrh15cQRXo4UcQODl+zc8jDr6bv2QQWhh29MvnDcsa1lSOX/HLb+z
+         i8OWsyNjyxxOXi8txIcgX2e97bNJguA/K10060cnnuY1xZ2vw3I4abgeIDYiHuK2bUVK
+         KXFHo5QKl1OI6BFN3LPrihghJcrd63YDqTmbXWPjrYCAKor/x9eCVI/xVdx++BgC8e/q
+         QniT86kL10R1AQUlU55Pq/E+0d2jqU8eU+Hw1KnqGCN/vFlxLg+SZSvOb13GyxJhhXHB
+         T2Mg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of bounce@m21.email.samsung.com designates 172.82.232.55 as permitted sender) smtp.mailfrom=bounce@m21.email.samsung.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=samsung.com
+Return-Path: <bounce@m21.email.samsung.com>
+Received: from r55.m21.email.samsung.com (r55.m21.email.samsung.com. [172.82.232.55])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3797d52155esi1387091f8f.1080.2024.09.19.21.27.02
+        for <munozjavier541@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 19 Sep 2024 21:27:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@m21.email.samsung.com designates 172.82.232.55 as permitted sender) client-ip=172.82.232.55;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of bounce@m21.email.samsung.com designates 172.82.232.55 as permitted sender) smtp.mailfrom=bounce@m21.email.samsung.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=samsung.com
+Return-Path: <bounce@m21.email.samsung.com>
+X-MSFBL: SZjcxsoV7k+gBj0awveZhmfCytCADGQpNZo9n0V8c4A=|eyJyY3B0X21ldGEiOns
+	gImluIjogInNhbXN1bmdfbWlkX3Byb2QxIiwgInIiOiAibXVub3pqYXZpZXI1NDF
+	AZ21haWwuY29tIiwgIm0iOiAiLTc5NDYxMDU3MSIsICJkIjogIjE5MjQ3OTQ5OCI
+	sICJpIjogIiIgfSwiYiI6ImF3c19zYW1zdW5nbGF0YW1fcHJvZDFfcHJvZC5ub3R
+	fc2VkYV91c2Vyc19tb21lbnR1bTA1X210YTAwNV8xNzIuODIuMjMyLjU1IiwiZyI
+	6InByb2Qubm90X3NlZGFfdXNlcnNfZTdhZjg5YjUtMTQ0OC00ZTQxLWFjMDUtNjA
+	wMmZiYWVkMzgxIiwiciI6Im11bm96amF2aWVyNTQxQGdtYWlsLmNvbSJ9
+Received: from [10.38.141.5] ([10.38.141.5:38776] helo=r56.m21.email.samsung.com)
+	by momentum05.lon7.cpt.adobe.net (envelope-from <bounce@m21.email.samsung.com>)
+	(ecelerity 4.2.38.999 r(:)) with ESMTP
+	id FB/09-14650-318FCE66; Fri, 20 Sep 2024 05:20:36 +0100
+From: "Samsung" <email@samsung.com>
+Subject: Encuentra las mejores ofertas
+Date: Thu, 19 Sep 2024 21:19:25 -0700
+To: <munozjavier541@gmail.com>
+Reply-To: "no-reply" <no-reply@m21.email.samsung.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM62DE6130E0B79010Asamsung_mid_prod1@m21.email.samsung.com>
+Precedence: Bulk
+Feedback-ID: MKT:-339812236:samsunglatam
+List-Unsubscribe: <mailto:bounce@m21.email.samsung.com?subject=unsubscribe%3CNM62DE6130E0B79010Asamsung_mid_prod1@m21.email.samsung.com%3E>
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>   
+<META charset=3D"utf-8"> 
+<!-- utf-8 works for most cases --> 
+  
+<META name=3D"viewport" content=3D"width=3Ddevice-width"> <!-- Forcing init=
+ial-scale shouldn't be necessary --> 
+  
+<META content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">   <!-- Use the =
+latest (edge) version of IE rendering engine --> 
+  
+<META name=3D"x-apple-disable-message-reformatting"> <!-- Disable auto-scal=
+e in iOS 10 Mail entirely --> 
+  <TITLE> =F0=9F=94=A5 =C2=A1Compra YA los m=C3=A1s vendidas Samsung!   
+ </TITLE> 
+<STYLE>
+    /* What it does: Remove spaces around the email design added by some em=
+ail clients. */
+    /* Beware: It can remove the padding / margin and add a background colo=
+r to the compose a reply window. */
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    /* What it does: Centers email on Android 4.4 */
+    div[style*=3D"margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+
+    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table a=
+lignment bug. Applies table-layout to the first 2 tables then removes for a=
+nything nested deeper. */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+
+    table table table {
+      table-layout: auto;
+    }
+
+    /* What it does: Prevents Windows 10 Mail from underlining links despit=
+e inline CSS. Styles for underlined links should be inline. */
+    a {
+      text-decoration: none;
+    }
+
+    /* What it does: Uses a better rendering method when resizing images in=
+ IE. */
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* What it does: A work-around for email clients meddling in triggered =
+links. */
+    *[x-apple-data-detectors],
+    /* iOS */
+    .unstyle-auto-detected-links *,
+    .aBn {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* What it does: Prevents Gmail from displaying a download button on la=
+rge, non-linked images. */
+    .a6S {
+      display: none !important;
+      opacity: 0.01 !important;
+    }
+
+    /* If the above doesn't work, add a .g-img class to any image in questi=
+on. */
+    img.g-img+div {
+      display: none !important;
+    }
+
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.=
+com/TedGoas/Cerberus/issues/89  */
+    /* Create one of these media queries for each additional viewport size =
+you'd like to fix */
+    /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+    @media only screen and (min-device-width: 320px) and (max-device-width:=
+ 374px) {
+      .email-container {
+        min-width: 320px !important;
+      }
+    }
+
+    /* iPhone 6, 6S, 7, 8, and X */
+    @media only screen and (min-device-width: 375px) and (max-device-width:=
+ 413px) {
+      .email-container {
+        min-width: 375px !important;
+      }
+    }
+
+    /* iPhone 6+, 7+, and 8+ */
+    @media only screen and (min-device-width: 414px) {
+      .email-container {
+        min-width: 414px !important;
+      }
+    }
+  </STYLE>
+   
+<STYLE>
+    /* What it does: Hover styles for buttons */
+    .button-td,
+    .button-a {
+      transition: all 100ms ease-in;
+    }
+
+    .button-td-primary:hover,
+    .button-a-primary:hover {
+      background: #555555 !important;
+      border-color: #555555 !important;
+    }
+
+    /* White Line Samsung Mail Fix */
+    #MessageViewBody img,
+    #MessageWebViewDiv img {
+      margin: 0 0 -1px 0 !important;
+    }
+
+    /* Center Stuff Samsung Mail Fix */
+    #MessageViewBody,
+    #MessageWebViewDiv {
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    .margin-lft-footer {
+      margin: 0 !important;
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 600px) {
+      
+      .email-container {
+        width: 100% !important;
+        margin: auto !important;
+      }
+
+      /* What it does: Forces elements to resize to the full width of their=
+ container. Useful for resizing images beyond their max-width. */
+      .fluid {
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* What it does: Forces table cells into full-width rows. */
+      .stack-column-none {
+        display: none;
+      }
+
+      .stack-column,
+      .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+
+      .center-paragraph {
+        max-width: 315px !important;
+        margin: 0 auto !important;
+      }
+
+      /* And center justify these ones. */
+      .stack-column-center {
+        text-align: center !important;
+      }
+
+      .stack-column-two {
+        text-align: center !important;
+      }
+
+      /* What it does: Adjust typography on small screens to improve readab=
+ility */
+      .email-container p {
+        font-size: 10px;
+      }
+
+      .email-container .text-unic {
+        font-size: 10px !important;
+      }
+
+      .email-header {
+        font-size: 9px !important;
+      }
+    }
+  </STYLE>
+   
+<META name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+</HEAD>     
+<BODY>
+<CENTER>
+ 
+  <table align=3D"center" width=3D"600" cellpadding=3D"0" cellspacing=3D"0"=
+>
+  
+    <tr>
+      <td style=3D"padding: 5px 0px; background-color: #FFFFFF;">
+        <p align=3D"right" style=3D"font-size:12px; margin-right: 20px; fon=
+t-family: arial; text-decoration: underline;">
+          <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a33475,ebb=
+ee074,396bcd&e=3DcDE9JTQwVyUyQmVIdUZSSVVBJTJCZWFUTHEwWXdxbG9WcGJDQ3Vob1JzTl=
+U4Mk1VbHdMOFklM0Q&s=3DSuWB8YdFEaPlxSXeDfVDBif-1mwHsbhVFCpP-xzDpCs" target=
+=3D"_blank">VER ONLINE</a>
+        </p>
+      </td>
+    </tr>
+ 
+    <tr style=3D"background-color: #000000;">
+      <td><img src=3D"https://res.m21.email.samsung.com/res/img/8C3FCD1C2BC=
+149E716CB27FFF609F35C.jpg" width=3D"400" alt=3D"Samsung" /></td>
+    </tr>
+    
+    <tr>
+      <td>
+        <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a33475,ebbee=
+074,396bce&e=3DcDE9c2FtRE0zNjExMjg&s=3Di43ezIxaXjlLWwIXD8K3jvJFZbnwJO4Def01=
+I7psLzQ" target=3D"_blank"><img src=3D"https://res.m21.email.samsung.com/re=
+s/samsung_mid_prod1/b5d5de7d4d52054c48c50857e31c683d2ea98a49d3a39d377f758ac=
+eb77ed1b9.jpg" width=3D"600" alt=3D"Ofertas">
+        </a>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" style=3D"b=
+ackground-color: #F4F4F4;">
+          <tr>
+            <td height=3D"5"></td>
+          </tr>
+          <tr>
+            <td align=3D"center"><span style=3D"font-weight: bold; font-siz=
+e: 22px; color: #000000; font-family: arial;">Encuentra la mejor tecnolog=
+=C3=ADa<br>en un solo lugar</span></td>
+          </tr>
+          <tr>
+            <td>
+              <p style=3D"margin: 0; padding: 0; text-align: center;">
+              <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a33475=
+,ebbee074,396bcf&e=3DcDE9c2FtRE0zNjExMjg&s=3DdoBisdR7z389Vmi9LKVuAUnw68GoaA=
+GoPxogwee0Gto" target=3D"_blank" style=3D"background-color:#000000; border-=
+radius:30px; color:#ffffff; display:inline-block; font-family:sans-serif; f=
+ont-size:13px; font-weight:bold; line-height:40px; text-align:center; text-=
+decoration:none; width:150px; margin-top: 15px;">Saber m=C3=A1s</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td height=3D"10" width=3D"600" style=3D"background-color: #F4F=
+4F4;"></td>
+          </tr>
+      </table>
+      </td>
+    </tr>
+    
+    
+    
+    <!-- OFFERS -->
+    <tr><td height=3D"10"></td></tr>
+    
+    
+    <tr>
+      <td align=3D"center">
+        <table cellpadding=3D"10" cellspacing=3D"0" style=3D"background-col=
+or: #eeeeee; border-radius: 10px;">
+          <tr>
+            <td width=3D"236" align=3D"center">
+              <a href=3D"https://www.samsung.com/mx/monitors/flat/s33a-24-i=
+nch-ls24a336nhlxzx/=3Fcid=3Dmx_ow_email_m-gc-la_etc_laun_202409-SEM-ECOFFER=
+-eDM-OfferEngineOPage-Conv_LS24A336NHLXZX_W38_samDM361128_W38&content_type=
+=3Dimage&creative=3DLS24A336NHLXZX&segment=3DOfferEngineOPage" target=3D"_b=
+lank">
+                <img src=3D"https://images.samsung.com/is/image/samsung/p6p=
+im/mx/ls24a336nhlxzx/gallery/mx-s33a-24-ls24a336nhlxzx-thumb-536794224=3F$2=
+16_216_PNG$" style=3D"border-radius: 10px; width: 216px;" alt=3D""Monitor P=
+lano 24"" FHD con =C3=81ngulo de Visi=C3=B3n Amplio color Negro"" />
+              </a>
+            </td>
+            <td width=3D"364" align=3D"center">
+              <p style=3D"font-size: 20px; color: #575756; font-family: Ari=
+al, Helvetica, sans-serif; line-height: 17px; text-align: center; display: =
+block; color: #575756; margin-top: 8px; font-weight: bold;">"Monitor Plano =
+24"" FHD con =C3=81ngulo de Visi=C3=B3n Amplio color Negro"</p>
+               
+              <p style=3D"text-align:center; max-width: 540px; font-family:=
+ Arial; border: 0 none; border-style: hidden; border-spacing: 0; margin: 0;=
+ border-width: 0;  letter-spacing: 0px; line-height: 17px; text-align: cent=
+er; display: block; font-size: 15px !important; color: #575756; margin-righ=
+t: 5px;">
+             Angulo de visi=C3=B3n amplio de 178=C2=B0 que le brinda una vi=
+sualizaci=C3=B3n clara y v=C3=ADvida.
+             </p>
+             
+             
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial; text-decoration:=
+ line-through;">De </span><span style=3D"text-decoration: line-through; fon=
+t-weight: bold; font-size: 24px; font-family: arial; color: #575756;">$3,02=
+8.76</span></p>
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial;">Ahora </span><s=
+pan style=3D"font-weight: bold; font-size: 24px; font-family: arial; color:=
+ #575756;">$2,928.00</span></p>
+              
+              <p style=3D"text-align: center;"><a href=3D"https://www.samsu=
+ng.com/mx/monitors/flat/s33a-24-inch-ls24a336nhlxzx/=3Fcid=3Dmx_ow_email_m-=
+gc-la_etc_laun_202409-SEM-ECOFFER-eDM-OfferEngineOPage-Conv_LS24A336NHLXZX_=
+W38_samDM361128_W38&content_type=3Dimage&creative=3DLS24A336NHLXZX&segment=
+=3DOfferEngineOPage" target=3D"_blank" style=3D"background-color:#000000; b=
+order-radius:30px; color:#ffffff; display:inline-block; font-family:sans-se=
+rif; font-size:13px; font-weight:bold; line-height:40px; text-align:center;=
+ text-decoration:none; width:190px; margin-top: 15px;">Comprar ahora</a></p=
+>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  
+    <tr><td height=3D"10"></td></tr>
+    
+    <tr>
+      <td align=3D"center">
+        <table cellpadding=3D"10" cellspacing=3D"0" style=3D"background-col=
+or: #eeeeee; border-radius: 10px;">
+          <tr>
+            <td width=3D"236" align=3D"center">
+              <a href=3D"https://www.samsung.com/mx/refrigerators/top-mount=
+-freezer/rt5300d-top-mount-freezer-ai-energy-mode-11-cu-ft-silver-rt31dg522=
+4s9em/=3Fcid=3Dmx_ow_email_m-gc-la_etc_laun_202409-SEM-ECOFFER-eDM-OfferEng=
+ineOPage-Conv_RT31DG5224S9EM_W38_samDM361128_W38&content_type=3Dimage&creat=
+ive=3DRT31DG5224S9EM&segment=3DOfferEngineOPage" target=3D"_blank">
+                <img src=3D"https://images.samsung.com/is/image/samsung/p6p=
+im/mx/rt31dg5224s9em/gallery/mx-top-mount-freezer-ai-energy-mode-and-flat-d=
+esign-498537-rt31dg5224s9em-thumb-542456784=3F$216_216" style=3D"border-rad=
+ius: 10px; width: 216px;" alt=3D"Refrigerador AI Top Mount 11 pies c=C3=BAb=
+icos, Despachador de agua, Acero" />
+              </a>
+            </td>
+            <td width=3D"364" align=3D"center">
+              <p style=3D"font-size: 20px; color: #575756; font-family: Ari=
+al, Helvetica, sans-serif; line-height: 17px; text-align: center; display: =
+block; color: #575756; margin-top: 8px; font-weight: bold;">Refrigerador AI=
+ Top Mount 11 pies c=C3=BAbicos, Despachador de agua, Acero</p>
+               
+              <p style=3D"text-align:center; max-width: 540px; font-family:=
+ Arial; border: 0 none; border-style: hidden; border-spacing: 0; margin: 0;=
+ border-width: 0;  letter-spacing: 0px; line-height: 17px; text-align: cent=
+er; display: block; font-size: 15px !important; color: #575756; margin-righ=
+t: 5px;">
+             Refrigerador Digital Inverter con 20 A=C3=B1os de garant=C3=AD=
+a en compresor.
+             </p>
+             
+             
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial; text-decoration:=
+ line-through;">De </span><span style=3D"text-decoration: line-through; fon=
+t-weight: bold; font-size: 24px; font-family: arial; color: #575756;">$14,9=
+99.00</span></p>
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial;">Ahora </span><s=
+pan style=3D"font-weight: bold; font-size: 24px; font-family: arial; color:=
+ #575756;">$11,099.00</span></p>
+              
+              <p style=3D"text-align: center;"><a href=3D"https://www.samsu=
+ng.com/mx/refrigerators/top-mount-freezer/rt5300d-top-mount-freezer-ai-ener=
+gy-mode-11-cu-ft-silver-rt31dg5224s9em/=3Fcid=3Dmx_ow_email_m-gc-la_etc_lau=
+n_202409-SEM-ECOFFER-eDM-OfferEngineOPage-Conv_RT31DG5224S9EM_W38_samDM3611=
+28_W38&content_type=3Dimage&creative=3DRT31DG5224S9EM&segment=3DOfferEngine=
+OPage" target=3D"_blank" style=3D"background-color:#000000; border-radius:3=
+0px; color:#ffffff; display:inline-block; font-family:sans-serif; font-size=
+:13px; font-weight:bold; line-height:40px; text-align:center; text-decorati=
+on:none; width:190px; margin-top: 15px;">Comprar ahora</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  
+    <tr><td height=3D"10"></td></tr>
+    
+    <tr>
+      <td align=3D"center">
+        <table cellpadding=3D"10" cellspacing=3D"0" style=3D"background-col=
+or: #eeeeee; border-radius: 10px;">
+          <tr>
+            <td width=3D"236" align=3D"center">
+              <a href=3D"https://www.samsung.com/mx/watches/galaxy-fit/gala=
+xy-fit3-dark-gray-bluetooth-sm-r390nzaamxo//=3Fcid=3Dmx_ow_email_m-gc-la_et=
+c_laun_202409-SEM-ECOFFER-eDM-OfferEngineOPage-Conv_SM-R390NZAAMXO_W38_samD=
+M361128_W38&content_type=3Dimage&creative=3DSM-R390NZAAMXO&segment=3DOfferE=
+ngineOPage" target=3D"_blank">
+                <img src=3D"https://images.samsung.com/is/image/samsung/p6p=
+im/mx/sm-r390nzaamxo/gallery/mx-galaxy-fit3-r390-sm-r390nzaamxo-thumb-53985=
+4901=3F$216_216_PNG$" style=3D"border-radius: 10px; width: 216px;" alt=3D"G=
+alaxy Fit3" />
+              </a>
+            </td>
+            <td width=3D"364" align=3D"center">
+              <p style=3D"font-size: 20px; color: #575756; font-family: Ari=
+al, Helvetica, sans-serif; line-height: 17px; text-align: center; display: =
+block; color: #575756; margin-top: 8px; font-weight: bold;">Galaxy Fit3</p>
+               
+              <p style=3D"text-align:center; max-width: 540px; font-family:=
+ Arial; border: 0 none; border-style: hidden; border-spacing: 0; margin: 0;=
+ border-width: 0;  letter-spacing: 0px; line-height: 17px; text-align: cent=
+er; display: block; font-size: 15px !important; color: #575756; margin-righ=
+t: 5px;">
+             "Hasta 13 d=C3=ADas con una sola carga Gran pantalla AMOLED de=
+ 1.6""."
+             </p>
+             
+             
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial; text-decoration:=
+ line-through;">De </span><span style=3D"text-decoration: line-through; fon=
+t-weight: bold; font-size: 24px; font-family: arial; color: #575756;">$999.=
+00</span></p>
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial;">Ahora </span><s=
+pan style=3D"font-weight: bold; font-size: 24px; font-family: arial; color:=
+ #575756;">$799.00</span></p>
+              
+              <p style=3D"text-align: center;"><a href=3D"https://www.samsu=
+ng.com/mx/watches/galaxy-fit/galaxy-fit3-dark-gray-bluetooth-sm-r390nzaamxo=
+//=3Fcid=3Dmx_ow_email_m-gc-la_etc_laun_202409-SEM-ECOFFER-eDM-OfferEngineO=
+Page-Conv_SM-R390NZAAMXO_W38_samDM361128_W38&content_type=3Dimage&creative=
+=3DSM-R390NZAAMXO&segment=3DOfferEngineOPage" target=3D"_blank" style=3D"ba=
+ckground-color:#000000; border-radius:30px; color:#ffffff; display:inline-b=
+lock; font-family:sans-serif; font-size:13px; font-weight:bold; line-height=
+:40px; text-align:center; text-decoration:none; width:190px; margin-top: 15=
+px;">Compra en Pre-venta ahora</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  
+    <tr><td height=3D"10"></td></tr>
+    
+    <tr>
+      <td align=3D"center">
+        <table cellpadding=3D"10" cellspacing=3D"0" style=3D"background-col=
+or: #eeeeee; border-radius: 10px;">
+          <tr>
+            <td width=3D"236" align=3D"center">
+              <a href=3D"https://www.samsung.com/mx/tablets/galaxy-tab-a/ga=
+laxy-tab-a9-plus-wifi-graphite-128gb-sm-x210nzaemxo//=3Fcid=3Dmx_ow_email_m=
+-gc-la_etc_laun_202409-SEM-ECOFFER-eDM-OfferEngineOPage-Conv_SM-X210NZAEMXO=
+_W38_samDM361128_W38&content_type=3Dimage&creative=3DSM-X210NZAEMXO&segment=
+=3DOfferEngineOPage" target=3D"_blank">
+                <img src=3D"https://images.samsung.com/is/image/samsung/p6p=
+im/mx/sm-x210nzaemxo/gallery/mx-galaxy-tab-a9-plus-sm-x210-sm-x210nzaemxo-t=
+humb-538752107=3F$216_216_PNG$" style=3D"border-radius: 10px; width: 216px;=
+" alt=3D"Galaxy Tab A9+ (Wi-Fi)" />
+              </a>
+            </td>
+            <td width=3D"364" align=3D"center">
+              <p style=3D"font-size: 20px; color: #575756; font-family: Ari=
+al, Helvetica, sans-serif; line-height: 17px; text-align: center; display: =
+block; color: #575756; margin-top: 8px; font-weight: bold;">Galaxy Tab A9+ =
+(Wi-Fi)</p>
+               
+              <p style=3D"text-align:center; max-width: 540px; font-family:=
+ Arial; border: 0 none; border-style: hidden; border-spacing: 0; margin: 0;=
+ border-width: 0;  letter-spacing: 0px; line-height: 17px; text-align: cent=
+er; display: block; font-size: 15px !important; color: #575756; margin-righ=
+t: 5px;">
+             Pantalla de 11 pulgadas 128 GB de Memoria Frecuencia de actual=
+izaci=C3=B3n de hasta 90 Hz.
+             </p>
+             
+             
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial; text-decoration:=
+ line-through;">De </span><span style=3D"text-decoration: line-through; fon=
+t-weight: bold; font-size: 24px; font-family: arial; color: #575756;">$4,99=
+9.00</span></p>
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial;">Ahora </span><s=
+pan style=3D"font-weight: bold; font-size: 24px; font-family: arial; color:=
+ #575756;">$3,999.00</span></p>
+              
+              <p style=3D"text-align: center;"><a href=3D"https://www.samsu=
+ng.com/mx/tablets/galaxy-tab-a/galaxy-tab-a9-plus-wifi-graphite-128gb-sm-x2=
+10nzaemxo//=3Fcid=3Dmx_ow_email_m-gc-la_etc_laun_202409-SEM-ECOFFER-eDM-Off=
+erEngineOPage-Conv_SM-X210NZAEMXO_W38_samDM361128_W38&content_type=3Dimage&=
+creative=3DSM-X210NZAEMXO&segment=3DOfferEngineOPage" target=3D"_blank" sty=
+le=3D"background-color:#000000; border-radius:30px; color:#ffffff; display:=
+inline-block; font-family:sans-serif; font-size:13px; font-weight:bold; lin=
+e-height:40px; text-align:center; text-decoration:none; width:190px; margin=
+-top: 15px;">Comprar ahora</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  
+    <tr><td height=3D"10"></td></tr>
+    
+    <tr>
+      <td align=3D"center">
+        <table cellpadding=3D"10" cellspacing=3D"0" style=3D"background-col=
+or: #eeeeee; border-radius: 10px;">
+          <tr>
+            <td width=3D"236" align=3D"center">
+              <a href=3D"https://www.samsung.com/mx/washers-and-dryers/wash=
+er-dryer-combo/wd8000dk-combo--all-in-one-combo-super-speed-26-kg-gray-wd26=
+db8995bzax/=3Fcid=3Dmx_ow_email_m-gc-la_etc_laun_202409-SEM-ECOFFER-eDM-Off=
+erEngineOPage-Conv_WD26DB8995BZAX_W38_samDM361128_W38&content_type=3Dimage&=
+creative=3DWD26DB8995BZAX&segment=3DOfferEngineOPage" target=3D"_blank">
+                <img src=3D"https://images.samsung.com/is/image/samsung/p6p=
+im/mx/wd26db8995bzax/gallery/mx-wd8000dk-wd26db8995bzax-thumb-543365755=3F$=
+216_216_PNG$" style=3D"border-radius: 10px; width: 216px;" alt=3D"Lavasecad=
+ora BESPOKE AI Laundry Combo=E2=84=A2 26 Kg lavado y 15 Kg secado con tecno=
+log=C3=ADa Heat Pump" />
+              </a>
+            </td>
+            <td width=3D"364" align=3D"center">
+              <p style=3D"font-size: 20px; color: #575756; font-family: Ari=
+al, Helvetica, sans-serif; line-height: 17px; text-align: center; display: =
+block; color: #575756; margin-top: 8px; font-weight: bold;">Lavasecadora BE=
+SPOKE AI Laundry Combo=E2=84=A2 26 Kg lavado y 15 Kg secado con tecnolog=C3=
+=ADa Heat Pump</p>
+               
+              <p style=3D"text-align:center; max-width: 540px; font-family:=
+ Arial; border: 0 none; border-style: hidden; border-spacing: 0; margin: 0;=
+ border-width: 0;  letter-spacing: 0px; line-height: 17px; text-align: cent=
+er; display: block; font-size: 15px !important; color: #575756; margin-righ=
+t: 5px;">
+             Lavado y secado perfecto, todo en uno en menos tiempo de maner=
+a f=C3=A1cil y sencilla.
+             </p>
+             
+             
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial; text-decoration:=
+ line-through;">De </span><span style=3D"text-decoration: line-through; fon=
+t-weight: bold; font-size: 24px; font-family: arial; color: #575756;">$66,7=
+98.60</span></p>
+              <p style=3D"text-align: center;"><span style=3D"font-size: 15=
+px; color: #0083fe; font-weight: bold; font-family: Arial;">Ahora </span><s=
+pan style=3D"font-weight: bold; font-size: 24px; font-family: arial; color:=
+ #575756;">$44,999.00</span></p>
+              
+              <p style=3D"text-align: center;"><a href=3D"https://www.samsu=
+ng.com/mx/washers-and-dryers/washer-dryer-combo/wd8000dk-combo--all-in-one-=
+combo-super-speed-26-kg-gray-wd26db8995bzax/=3Fcid=3Dmx_ow_email_m-gc-la_et=
+c_laun_202409-SEM-ECOFFER-eDM-OfferEngineOPage-Conv_WD26DB8995BZAX_W38_samD=
+M361128_W38&content_type=3Dimage&creative=3DWD26DB8995BZAX&segment=3DOfferE=
+ngineOPage" target=3D"_blank" style=3D"background-color:#000000; border-rad=
+ius:30px; color:#ffffff; display:inline-block; font-family:sans-serif; font=
+-size:13px; font-weight:bold; line-height:40px; text-align:center; text-dec=
+oration:none; width:190px; margin-top: 15px;">Compra en Pre-venta ahora</a>=
+</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  
+    <tr><td height=3D"10"></td></tr>
+    
+    
+    <!-- Footer : BEGIN -->
+  <!-- Media Social : BEGIN -->
+    <tr>
+        <td align=3D"center" width=3D"100%" bgcolor=3D"#ffffff">
+          <table align=3D"center" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" width=3D"70%">
+            <tr>
+              <!-- Column : BEGIN -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd0" _label=3D"999_Social_Facebook_image" target=3D"_blank" =
+title=3D"Facebook"><img src=3D"https://res.m21.email.samsung.com/res/img/57=
+9B85FA8C17A801DC49A7F98A5FE13D.png" width=3D"56" title=3D"Facebook" alt=3D"=
+Facebook" border=3D"0"/>
+                </a>
+              </td>
+              <!-- Column : END -->
+              <!-- Column : BEGIN -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd1" _label=3D"999_Social_Instagram_image" target=3D"_blank"=
+ title=3D"Instagram"><img src=3D"https://res.m21.email.samsung.com/res/img/=
+AB0CFFF3516D0C76937A450DEA8EE08A.png" width=3D"56" title=3D"Instagram" alt=
+=3D"Instagram" border=3D"0" />
+                </a>
+              </td>
+              <!-- Column : END -->
+              <!-- Column : BEGIN -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd2" _label=3D"999_Social_Twitter_image" target=3D"_blank" t=
+itle=3D"Twitter"><img src=3D"https://res.m21.email.samsung.com/res/img/6492=
+3B6B43DD4EC27FC6559A57378489.png" width=3D"56"  title=3D"Twitter" alt=3D"Tw=
+itter" border=3D"0"/>
+                </a>
+              </td>
+              <!-- Column : END -->
+              <!-- Column : BEGIN -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd3" _label=3D"999_Social_Youtube_image" target=3D"_blank" t=
+itle=3D"Youtube"><img src=3D"https://res.m21.email.samsung.com/res/img/4360=
+A23756915D1B6FB409920FE662CB.png" width=3D"56"  alt=3D"Youtube" border=3D"0=
+"/>
+                </a>
+              </td>
+              <!-- Column : END -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd4" _label=3D"999_Social_Linkedin_image" target=3D"_blank" =
+title=3D"Linkedin"><img src=3D"https://res.m21.email.samsung.com/res/img/B7=
+2FCFC822EC55E4CA81141C5AC49ADF.png" width=3D"56" alt=3D"Linkedin" border=3D=
+"0"/>
+                </a>
+              </td>
+              <!-- Column : BEGIN -->
+              <td width=3D"16.6666666667%" align=3D"center">
+                <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a334=
+75,ebbee074,396bd5" _label=3D"999_Social_Tiktok_image" target=3D"_blank" ti=
+tle=3D"Tik Tok"><img src=3D"https://res.m21.email.samsung.com/res/img/9B364=
+64C7017E78CBEC0C0960FF05BDA.png" width=3D"56" alt=3D"Tik Tok" border=3D"0"/=
+>
+                </a>
+              </td>
+              <!-- Column : BEGIN -->
+            </tr>
+          </table>
+        </td>
+    </tr>
+    <!-- Media Social : END -->
+    
+  <tr>
+    <td height=3D"20" bgcolor=3D"#ffffff"></td>
+    </tr>  
+    
+  <tr>
+        <td align=3D"center" bgcolor=3D"#ffffff">
+      <table align=3D"center" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" width=3D"100%" style=3D"max-width: 600px;">
+        <tr>
+          <td>
+          <p align=3D"center" style=3D"font-family: sans-serif; color: #939=
+598; margin: 0 13%; font-size: 10px; line-height: 14px;">
+            
+
+            Aviso de privacidad<BR/><BR/>
+
+            Im&aacute;genes utilizadas con fines ilustrativos.<BR/><BR/>
+
+            Consulta t&eacute;rminos y condiciones en www.samsung.com/mx/in=
+fo/terms-and-conditions/<BR/><BR/>
+
+            Este correo electr&oacute;nico se ha enviado a los miembros que=
+ han solicitado unirse a la lista de correo.<BR/><BR/>
+          </p>
+          <p align=3D"center" style=3D"font-family: sans-serif; color: #939=
+598; margin: 0 10%; font-size: 11px; line-height: 17px;">
+            Si no desea recibir nuestros correos electr&oacute;nicos, haga =
+clic
+            <a href=3D"http://t.m21.email.samsung.com/r/=3Fid=3Dhd0a33475,e=
+bbee074,396bd6&e=3DcDE9JTQwVEFnT3F3WVJvTWtTU09XNVduYjRvdyUzRCUzRA&s=3DE-9kC=
+CR3XnsAZwLaPgOD1k3Y0-YdDJe5DipyBPtfBTg" _type=3D"optout" _label=3D"Optout" =
+target=3D"_blank" title=3D"Clique aqui" style=3D"color: #939598; text-decor=
+ation: underline;"><b>aqu&iacute;</b>.
+            </a>
+          </p>
+          <p align=3D"center" style=3D"font-family: sans-serif; color: #939=
+598; margin: 10px 10%; font-size: 10px; line-height: 17px;">
+            &copy; Copyright 2023 Samsung Electronics Co., Ltd.&nbsp;Todos =
+los derechos reservados. No responder.<BR/>
+            Esta direcci&oacute;n de correo electr&oacute;nico es solo para=
+ correos electr&oacute;nicos salientes.
+
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td style=3D"background-color: #ffffff; width: 100%; height: 30px=
+;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>    
+    
+    
+    
+    
+  </table>
+  
+  </CENTER>
+  
+  <img height=3D'0' width=3D'0' alt=3D'' src=3D'http://t.m21.email.samsung.=
+com/r/=3Fid=3Dhd0a33475,ebbee074,1'/></BODY>
+  
+</HTML>
+

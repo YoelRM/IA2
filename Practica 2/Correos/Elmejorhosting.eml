@@ -1,0 +1,83 @@
+Delivered-To: munozjavier541@gmail.com
+Received: by 2002:a05:7208:9028:b0:8e:6d6d:f117 with SMTP id j40csp6230rbd;
+        Tue, 24 Sep 2024 14:07:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGxt04qLPfmpAzcrNi6Iv2zD+WcNwf7EyKZTGYWDF1LcWICiRaGqP8GKotsK7n+7h9G1VlP
+X-Received: by 2002:a05:6000:1244:b0:374:c287:2afe with SMTP id ffacd0b85a97d-37cc24ca69cmr382483f8f.56.1727212070359;
+        Tue, 24 Sep 2024 14:07:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727212070; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BfhArNXy4LqboOh4niYmpZKUs/extLhOH9sUmf0Kp4t1WGifBO1PhCY790YT+7Jd6O
+         MVTzaFrKuJyT3p63GQJhcJz/1dofEYdtzgAECtyxdceyVCALmReCcTknMbCPunedcFWq
+         lhpY0gYO20MI3m0DM3UM39squJ/d6gVyiCPJQZ7i3SZWOCaQbsbgbccnTDItA5nD4yiC
+         hzhTDRy1ngnjg20hnrEG8bmndiphfYfXnoqLkGaxd1ADSLqebzQB7nzmqWXspUQUaStL
+         ZgHFu1e2tvZNcago501kkYp09dkTHbnVLgwGHF2Uw/7NFCCiL7v/V/3aEMDw6RFp6/S8
+         24gQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:from:mime-version:subject:to:message-id:date:dkim-filter;
+        bh=DxJI1Bbxzl1us2fdT0NzBus7UEuqKdHbTyH8d1FbAEM=;
+        fh=9I+MvRx8ClmRVzY8ENe1pQLUO9W10GVAHuRQqCUY6jE=;
+        b=M1XBk85YntELguq5LwoqTmQE8hGJ+FQ8KefYAPcdJ7Ip/w59LgFb6qM4ZATQwYw9Nv
+         6Gomua2XjVfncA8ECcKgIINpMuZOWC/qDego2iUHkyICIwq322iq4bhatD3zqjXBcHfy
+         3fDgKKRTrEaurXnTEK1fNoz/cOQslZfNe9Ub7TR0KpLSrGb96bl/hQxOMcixHgKD83h+
+         SArNNt0Vu3FmNhKYbeHVK3yRfdBNJScl6OfEZ56TdRBlNpathu28DgS4/KgXHPBuFGet
+         yu9DtHOP8fn+pA1TaHlB1lOqCo7UYzdA3XljQyWF3Xw2wOjZMBVWCNZDbhHgn/KshSQb
+         h7HA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of noreply@hostmessage.info designates 82.163.176.4 as permitted sender) smtp.mailfrom=noreply@hostmessage.info
+Return-Path: <noreply@hostmessage.info>
+Received: from smtp-out.byetcluster.com (smtp-out.byetcluster.com. [82.163.176.4])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-37cbc32ce14si840040f8f.960.2024.09.24.14.07.50
+        for <munozjavier541@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 24 Sep 2024 14:07:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@hostmessage.info designates 82.163.176.4 as permitted sender) client-ip=82.163.176.4;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of noreply@hostmessage.info designates 82.163.176.4 as permitted sender) smtp.mailfrom=noreply@hostmessage.info
+Received: from admin1.byetcluster.com (localhost [127.0.0.1])
+	by admin1.byetcluster.com (Postfix) with ESMTP id E98702A14C3;
+	Tue, 24 Sep 2024 17:03:57 -0400 (EDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 smtp-out.byetcluster.com 094401AA9370
+Received: (from root@localhost)
+	by admin1.byetcluster.com (8.14.7/8.14.7/Submit) id 48OL3v0B016648;
+	Tue, 24 Sep 2024 17:03:57 -0400
+Date: Tue, 24 Sep 2024 17:03:57 -0400
+Message-Id: <202409242103.48OL3v0B016648@admin1.byetcluster.com>
+To: munozjavier541@gmail.com
+Subject: Elmejorhosting.online Free Hosting PHP 8.2 Upgrade
+MIME-Version: 1.0
+Content-type:text/html;charset=UTF-8
+From: "noreply@hostmessage.info"<HostMessage@admin1.byetcluster.com>
+Cc: noreply@hostmessage.info
+
+Dear Valued Client,
+
+Greetings from Elmejorhosting.online and iFastNet, providers of the servers and network to Elmejorhosting.online.<br/>
+<br/>
+Great news!  We have upgraded our entire free hosting network to use the latest stable PHP version 8.2 !  You can now run the latest most advanced PHP scripts on our free platform.
+<br/>
+With no expiration date free hosting is for life, add your own domain names use our Softaculious script installer and build the perfect website, all for free at Elmejorhosting.online.
+<br/>
+Not only have we updated PHP to v8.2 we have also expanded our server cluster adding a huge amount of extra CPU, RAM and SSD storage capacity.  This has allowed us to increased the RAM and CPU power given to every free hosting website making it faster and even more capable.
+<br/>
+Our free hosting is awesome and so is our Premium upgraded plans which include free top level domains, free SSL, SMTP/IMAP email, unlimited disk space and 100's of extras, the perfect place to host your site when you out-grow our super free hosting service or just want more !
+<br>
+We are giving you a special discount coupon that will get you 25% off any web premium hosting plan from iFastNet.com, the coupon code is :<br/>
+<br/>
+AlwaysGettingBetter<br/>
+<br/>
+<br/>
+As usual all our premium hosting plans include a free top level domain to get your new site online without any complications.<br/>
+<br/>
+Don't miss your chance to get 25% off hosting with a free domain from iFastNet.com on our super fast new servers!  Use AlwaysGettingBetter coupon at:<br/>
+<br/>
+https://iFastNet.com/
+<br/>
+<br/>
+Thanks for reading and Happy Holidays !
+
+
+
+
+UN-subscribe by visiting  the below url in your web browser http://byethost.com/unsubscribe.php?id=c0d6d8ec0fd38fe4ba15bc37f560793b&mail=munozjavier541@gmail.com
+
